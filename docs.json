@@ -14,42 +14,62 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Getting Started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "how-to-register",
+              "phone-number"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Basic Setup",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
+              "configuration/quick-customize",
+              "configuration/knowledge"
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "Detailed Configuration",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "configuration/detailed-settings/greeting-phrase",
+              "configuration/detailed-settings/prompts",
+              "configuration/detailed-settings/voice",
+              "configuration/detailed-settings/language",
+              "configuration/detailed-settings/common-question"
+            ]
+          },
+          {
+            "group": "Workflows",
+            "pages": [
+              "workflows/transfer",
+              "workflows/text",
+              "workflows/collect-info"
+            ]
+          },
+          {
+            "group": "Real-Time Integrations",
+            "pages": [
+              "integrations/calendar",
+              "integrations/API"
+            ]
+          },
+          {
+            "group": "Notifications",
+            "pages": [
+              "account/notifications",
+              "notifications/advanced-notifications"
+            ]
+          },
+          {
+            "group": "Call Intelligence",
+            "pages": [
+              "smart-call"
+            ]
+          },
+          {
+            "group": "Web Widget",
+            "pages": [
+              "website-widget"
             ]
           }
         ]
@@ -59,13 +79,8 @@
       "anchors": [
         {
           "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "href": "https://docs.welco.ai",
           "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
         },
         {
           "anchor": "Blog",
@@ -83,7 +98,7 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@welco.ai"
       }
     ],
     "primary": {
