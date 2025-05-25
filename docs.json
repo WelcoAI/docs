@@ -16,7 +16,7 @@
           {
             "group": "Getting Started",
             "pages": [
-              "index",
+              "overview",
               "how-to-register",
               "phone-number"
             ]
