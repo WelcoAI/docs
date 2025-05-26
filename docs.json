@@ -7,7 +7,7 @@
     "light": "#07C983",
     "dark": "#15803D"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/Welcofaviconicondark.svg",
   "navigation": {
     "tabs": [
       {
@@ -91,8 +91,8 @@
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/welcolight.svg",
+    "dark": "/logo/welcodark.svg"
   },
   "navbar": {
     "links": [
