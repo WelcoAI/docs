@@ -1,0 +1,470 @@
+---
+title: "Prompt Engineering Guide for AI Receptionist"
+description: "Master the art of crafting effective prompts for your Welco AI receptionist. Learn best practices for greetings, conversation flows, system instructions, and troubleshooting common prompt issues."
+---
+
+# Prompt Engineering Guide for AI Receptionist
+
+Effective prompt engineering is crucial for creating an AI receptionist that delivers exceptional caller experiences. This comprehensive guide covers everything from basic greeting setup to advanced conversation node configuration.
+
+## Prerequisites
+
+Before diving into prompt engineering, ensure you have:
+
+- A Welco account with an active AI receptionist
+- Basic understanding of your business processes and common caller inquiries
+- Access to the Welco dashboard and configuration panels
+- Knowledge of your target audience and their communication preferences
+
+## Understanding AI Receptionist Prompting
+
+Your AI receptionist uses several layers of prompts to deliver natural, helpful interactions:
+
+**System-Level Prompts:**
+
+![ai receptionist main prompt](/images/Screenshot2025-09-24at2.13.20PM.png)
+
+- Core behavior and personality instructions
+- Global conversation guidelines
+- Safety and compliance rules
+
+**Greeting Prompts:**
+
+![greeting phrase prompt](/images/Screenshot2025-09-24at2.13.09PM.png)
+
+- First impression messages
+- Call initialization instructions
+- Context-setting for the entire conversation
+
+**Conversation Node Prompts:**
+
+![conversational node promp](/images/Screenshot2025-09-24at2.14.02PM.png)
+
+- Specific task instructions for workflow nodes
+- Dynamic response generation guidelines
+- Transition logic and condition evaluation
+
+**Knowledge Integration:**
+
+- How to use your knowledge base effectively
+- Information retrieval and presentation guidelines
+- Fact-checking and accuracy instructions
+
+## Greeting Configuration
+
+### Basic Greeting Structure
+
+Your greeting is the first interaction callers have with your AI receptionist. Follow this proven structure:
+
+```
+[Warm Welcome] + [Business Identification] + [Value Proposition] + [Call to Action]
+```
+
+**Example Greeting:**
+
+```
+"Hello! Thank you for calling MedPractice Family Health. I'm your AI assistant,
+here to help you schedule appointments, answer questions about our services,
+or connect you with our team. How can I assist you today?"
+```
+
+### Greeting Best Practices
+
+**✅ Do's:**
+
+- Keep it under 25 seconds when spoken
+- Include your business name clearly
+- Set clear expectations about AI capabilities
+- End with an open-ended question
+- Use warm, professional language
+- Match your brand voice and tone
+
+**❌ Don'ts:**
+
+- Don't apologize for being an AI
+- Avoid overly technical language
+- Don't list every possible service
+- Skip generic phrases like "Your call is important to us"
+- Don't use industry jargon without explanation
+
+### Industry-Specific Greeting Examples
+
+**Healthcare Practice:**
+
+```
+"Hi! You've reached Wellness Medical Center. I'm your AI scheduling assistant.
+I can help you book appointments, check our services, or answer questions about
+your visit. What brings you in today?"
+```
+
+**Restaurant:**
+
+```
+"Thank you for calling Bella Vista Restaurant! I'm here to help with reservations,
+answer questions about our menu, or provide information about special events.
+How can I make your dining experience perfect?"
+```
+
+**Law Office:**
+
+```
+"Good [morning/afternoon], you've reached Thompson & Associates Law Firm.
+I'm the AI assistant helping with initial consultations and appointment scheduling.
+I can also answer general questions about our practice areas. How may I help you?"
+```
+
+**Real Estate:**
+
+```
+"Hello! Welcome to Premier Properties. I'm your AI assistant, ready to help you
+with property searches, schedule viewings, or connect you with our agents.
+Are you looking to buy, sell, or rent today?"
+```
+
+## Speaking Style Configuration
+
+### Tone and Personality Settings
+
+Configure your AI's personality to match your brand:
+
+**Professional & Formal:**
+
+```
+"Speak in a professional, courteous manner. Use complete sentences and proper grammar.
+Maintain a helpful but formal tone. Address callers as 'sir' or 'ma'am' when appropriate.
+Avoid slang or casual expressions."
+```
+
+**Friendly & Conversational:**
+
+```
+"Be warm, friendly, and approachable. Use conversational language while remaining
+professional. Show enthusiasm for helping callers. Use phrases like 'I'd be happy to help'
+and 'That's a great question!' Keep responses natural and engaging."
+```
+
+**Expert & Authoritative:**
+
+```
+"Demonstrate expertise and confidence in your responses. Provide detailed, accurate
+information. Use industry terminology appropriately but explain complex concepts clearly.
+Position yourself as a knowledgeable resource."
+```
+
+### Response Length Guidelines
+
+**Short & Concise (Recommended for most businesses):**
+
+```
+"Keep responses brief and to the point. Aim for 1-2 sentences per response.
+Get to the helpful information quickly. Ask follow-up questions to gather
+necessary details efficiently."
+```
+
+**Detailed & Explanatory (Good for complex services):**
+
+```
+"Provide comprehensive responses that fully address caller questions.
+Include relevant context and examples when helpful. Break down complex
+information into digestible parts. Ensure callers have complete understanding."
+```
+
+## Conversation Node and AI Receptionist Prompting
+
+### Basic Conversation Node Structure
+
+When creating conversation nodes, use this framework:
+
+```
+[Context Setting] + [Task Definition] + [Guidelines] + [Success Criteria]
+```
+
+**Example Appointment Scheduling Node:**
+
+```
+You are helping a caller schedule a medical appointment. Your goal is to collect
+the necessary information to book their visit.
+
+REQUIRED INFORMATION:
+- Preferred appointment type (check-up, consultation, specific concern)
+- Preferred date and time
+- Patient name and contact information
+- Reason for visit (brief description)
+
+GUIDELINES:
+- Be understanding of health concerns
+- Offer multiple appointment options when possible
+- Explain any preparation requirements
+- Confirm all details before finalizing
+
+COMPLETION CRITERIA:
+- All required information has been collected
+- Appointment preferences are clear
+- Caller confirms the details are correct
+```
+
+### Advanced Conversation Node Techniques
+
+**Conditional Logic Integration:**
+
+```
+You are determining the caller's primary need. Based on their response,
+you will route them to the appropriate next step.
+
+LISTEN FOR THESE INTENTS:
+- Appointment scheduling → Route to scheduling node
+- General questions → Use knowledge base to answer
+- Urgent medical concern → Offer immediate callback option
+- Billing/insurance → Transfer to billing department
+
+EVALUATION RULES:
+- If caller mentions "emergency" or "urgent pain" → Mark as priority
+- If caller asks about "cost" or "insurance" → Note billing inquiry
+- If caller is unsure what they need → Ask clarifying questions
+
+RESPONSE STYLE:
+- Ask one question at a time
+- Acknowledge their concern before gathering details
+- Provide reassurance about next steps
+```
+
+**Multi-Turn Conversation Management:**
+
+```
+You are managing a multi-step information gathering process. Stay focused on
+your specific goal while being helpful and patient.
+
+YOUR SPECIFIC TASK:
+[Define the exact task - e.g., "Collect contact information for a service quote"]
+
+CONVERSATION FLOW:
+1. Explain what information you need and why
+2. Ask for information one piece at a time
+3. Confirm each piece before moving to the next
+4. Summarize everything at the end
+
+HANDLING INTERRUPTIONS:
+- If caller asks unrelated questions, briefly address them then return to your task
+- If caller becomes frustrated, acknowledge their feelings and explain the process
+- If caller provides partial information, ask for clarification politely
+
+COMPLETION SIGNAL:
+Mark the conversation complete ONLY when you have successfully collected
+all required information and the caller has confirmed it's correct.
+```
+
+### Conversation Node Examples by Use Case
+
+**Lead Qualification Node:**
+
+```
+You are qualifying a potential customer for our home renovation services.
+Your goal is to understand their project and determine if we're a good fit.
+
+QUALIFICATION QUESTIONS:
+1. What type of renovation are you considering?
+2. What's your approximate timeline for this project?
+3. Do you have a budget range in mind?
+4. Have you worked with contractors before?
+5. What's your property location?
+
+CONVERSATION APPROACH:
+- Start with open-ended questions about their vision
+- Listen for urgency indicators (timeline pressure, specific events)
+- Identify decision-making authority ("Are you the primary decision-maker?")
+- Note any concerns or hesitations
+
+NEXT STEPS DETERMINATION:
+- High-quality lead → Schedule in-person consultation
+- Needs more information → Send information packet
+- Budget mismatch → Provide alternative solutions
+- Timeline conflict → Add to future follow-up list
+```
+
+**Customer Service Node:**
+
+```
+You are helping resolve a customer service inquiry. Be empathetic,
+solution-focused, and thorough in your assistance.
+
+SERVICE APPROACH:
+1. Listen actively and acknowledge their concern
+2. Ask clarifying questions to fully understand the issue
+3. Provide clear, actionable solutions
+4. Confirm their satisfaction with the resolution
+5. Offer additional assistance
+
+COMMON ISSUES TO HANDLE:
+- Order status and tracking questions
+- Product returns and exchanges
+- Billing and payment concerns
+- Technical support needs
+- General product information
+
+ESCALATION TRIGGERS:
+- Complex technical issues requiring specialist knowledge
+- Requests for refunds over company policy limits
+- Complaints requiring management attention
+- Legal or compliance-related matters
+
+TONE GUIDELINES:
+- Remain calm and professional regardless of caller's emotion
+- Use phrases like "I understand your frustration" and "Let me help resolve this"
+- Avoid making promises you can't keep
+- Always end with "Is there anything else I can help you with today?"
+```
+
+## Knowledge Base Integration
+
+### Optimizing Knowledge Retrieval
+
+**Knowledge Query Instructions:**
+
+```
+When answering questions, always search your knowledge base first.
+Use the most current and specific information available.
+
+SEARCH STRATEGY:
+1. Use specific keywords from the caller's question
+2. Look for exact matches before general topics
+3. Cross-reference multiple sources if available
+4. Note the source and date of information when relevant
+
+RESPONSE FORMATTING:
+- Lead with the direct answer to their question
+- Provide supporting details if helpful
+- Mention if information might need verification
+- Offer to connect them with a specialist for complex topics
+```
+
+**Handling Knowledge Gaps:**
+
+```
+When you don't have specific information in your knowledge base:
+
+1. Be honest about not having that specific information
+2. Offer to connect them with someone who can help
+3. Provide related information that might be useful
+4. Suggest alternative resources or next steps
+
+EXAMPLE RESPONSES:
+- "I don't have the specific pricing for that service in my current information,
+  but I can connect you with our sales team who can provide an accurate quote."
+- "While I don't have details about that particular policy, I can tell you about
+  our general approach and arrange for a specialist to call you back."
+```
+
+### Knowledge Base Best Practices
+
+**Content Organization:**
+
+- Structure information hierarchically (general → specific)
+- Use consistent formatting and terminology
+- Include common variations and synonyms
+- Update content regularly to maintain accuracy
+
+**FAQ Integration:**
+
+```
+Create FAQ pairs that address common caller questions:
+
+Q: "What are your hours?"
+A: "We're open Monday through Friday from 9 AM to 6 PM, and Saturdays from 10 AM to 4 PM. We're closed on Sundays and major holidays."
+
+Q: "Do you accept my insurance?"
+A: "We accept most major insurance plans. I can help you verify coverage - what insurance provider do you have?"
+
+Q: "How much does a consultation cost?"
+A: "Initial consultations are $150, but this cost is often covered by insurance. Would you like me to help you check your benefits?"
+```
+
+## Common Prompt Issues and Solutions
+
+### Issue 1: AI Being Too Verbose
+
+**Problem:** AI provides overly long responses that lose caller attention.
+
+**Solution:**
+
+```
+RESPONSE LENGTH RULES:
+- Keep initial responses under 30 seconds when spoken
+- Break complex information into digestible chunks
+- Ask if they'd like more details before elaborating
+- Use bullet points or numbered lists for multiple items
+
+EXAMPLE FIX:
+Instead of: "We offer comprehensive dental services including general cleanings, preventive care, cosmetic dentistry procedures like whitening and veneers, restorative work such as fillings and crowns, orthodontic treatments, oral surgery, and emergency dental care with same-day appointments available for urgent issues..."
+
+Use: "We offer a full range of dental services including cleanings, cosmetic work, and emergency care. What specific service are you interested in learning about?"
+```
+
+### Issue 2: AI Not Understanding Context
+
+**Problem:** AI loses track of conversation context or repeats information.
+
+**Solution:**
+
+```
+CONTEXT MANAGEMENT:
+- Always acknowledge what the caller has already shared
+- Reference previous parts of the conversation when relevant
+- Build upon information rather than starting over
+- Use phrases like "Based on what you mentioned about..." or "Following up on your earlier question..."
+
+MEMORY REINFORCEMENT:
+- Summarize key points periodically
+- Confirm understanding before moving to new topics
+- Keep track of the caller's primary goal throughout the conversation
+```
+
+### Issue 3: Inconsistent Personality
+
+**Problem:** AI switches between different tones or personalities mid-conversation.
+
+**Solution:**
+
+```
+PERSONALITY CONSISTENCY RULES:
+- Maintain the same level of formality throughout the call
+- Use consistent vocabulary and phrases
+- Stick to the established brand voice
+- Reference your speaking style guidelines in each conversation node
+
+PERSONALITY ANCHORS:
+- Define 3-5 key personality traits for your AI
+- Include these in every major prompt section
+- Use specific phrases or expressions consistently
+- Train all conversation nodes with the same personality foundation
+```
+
+### Issue 4: Poor Transition Handling
+
+**Problem:** Awkward transitions between conversation topics or workflow nodes.
+
+**Solution:**
+
+```
+SMOOTH TRANSITION TECHNIQUES:
+1. Bridge statements: "Now that I have your contact information, let's discuss..."
+2. Progress indicators: "We're halfway through the booking process..."
+3. Choice confirmations: "Perfect! I have you down for a Tuesday appointment. Next, I'll need..."
+4. Natural segues: "That's a great question about our services. Speaking of services..."
+
+TRANSITION PHRASES:
+- "Now that we've covered [topic], let's move on to..."
+- "I have all the information I need about [topic]. The next step is..."
+- "Based on what you've told me, I recommend we..."
+- "To complete your request, I'll also need..."
+```
+
+## Testing and Optimization
+
+**Real-World Testing:**
+
+1. Have team members call and role-play different scenarios
+2. Record interactions for analysis (with permission)
+3. Monitor for consistent personality and helpful responses
+4. Check that all required information is collected
+
+By following this comprehensive guide, you'll create an AI receptionist that provides natural, helpful, and efficient interactions that reflect your brand and serve your callers effectively.

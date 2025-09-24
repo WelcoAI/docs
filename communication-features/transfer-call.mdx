@@ -1,0 +1,212 @@
+---
+title: "Call Transfer Setup"
+description: "Configure call transfer scenarios for your Welco AI receptionist to intelligently route calls to the right human agents based on customer needs and conversation context."
+---
+
+# Call Transfer Setup
+
+Configure intelligent call routing scenarios to automatically transfer calls to human agents when specific conditions are met or when the AI determines human intervention is needed.
+
+## What It Does
+
+Call transfer setup allows your AI receptionist to:
+
+- Route calls to specific phone numbers based on conversation content
+- Transfer complex inquiries to human specialists
+- Escalate calls when AI reaches its capability limits
+- Provide seamless handoffs with context preservation
+- Deliver custom messages before transferring
+
+## When to Use
+
+**Always Enable For:**
+
+- Businesses with human agents available during business hours
+- Complex services requiring specialist knowledge
+- Sales conversations that need human closing
+- Emergency or urgent situations requiring immediate human attention
+- Customer complaints or sensitive issues
+
+**Configure Multiple Scenarios For:**
+
+- Different departments (sales, support, billing)
+- Specialist routing (doctor types, legal areas, technical experts)
+- Escalation levels (manager, supervisor, owner)
+- Time-based routing (business hours, after-hours, weekends)
+
+## How to Configure
+
+![ai transfer calls](/images/Screenshot2025-09-24at4.40.25PM.png)
+
+### Basic Setup
+
+1. Navigate to **Connections** → **Call Transfer**
+2. Click **Add New Transfer Scenario**
+3. Define the transfer condition and target phone number
+4. Set the pre-transfer message for callers
+
+### Transfer Scenario Components
+
+![transfer call components](/images/Screenshot2025-09-24at4.40.50PM.png)
+
+**Scenario Name:** Clear identifier for the transfer rule
+**Transfer Condition:** When this transfer should trigger
+**Phone Number:** Destination number for the transfer
+**Voice Response:** Message played before transfer
+
+### Example Transfer Scenarios
+
+**Emergency/Urgent Transfer:**
+
+```json
+{
+  "scenario": "Emergency Medical Situation",
+  "condition": "caller mentions emergency, urgent pain, or severe symptoms",
+  "phone_number": "+1234567890",
+  "voice_response": "I understand this is urgent. Let me connect you with our medical team right away."
+}
+```
+
+**Sales Inquiry Transfer:**
+
+```json
+{
+  "scenario": "Sales Consultation Request",
+  "condition": "caller asks about pricing, quotes, or wants to make a purchase",
+  "phone_number": "+1234567891",
+  "voice_response": "I'll connect you with our sales specialist who can provide detailed pricing and help you get started."
+}
+```
+
+**Technical Support Transfer:**
+
+```json
+{
+  "scenario": "Complex Technical Issue",
+  "condition": "caller has technical problems AI cannot resolve",
+  "phone_number": "+1234567892",
+  "voice_response": "Let me transfer you to our technical support team who can help resolve this issue."
+}
+```
+
+## Transfer Conditions
+
+### Keyword-Based Triggers
+
+**Urgency Keywords:**
+
+- "Emergency", "urgent", "ASAP", "immediately"
+- "Help me", "serious problem", "can't wait"
+
+**Department Keywords:**
+
+- "Manager", "supervisor", "speak to a person"
+- "Billing", "payment", "refund", "complaint"
+
+**Service-Specific Keywords:**
+
+- "Surgery consultation", "legal advice", "complex repair"
+- "Custom quote", "bulk order", "enterprise solution"
+
+### Intent-Based Triggers
+
+**Complex Requests:** AI detects conversation complexity beyond its capabilities
+**Emotional Escalation:** Caller frustration or dissatisfaction indicators
+**Specific Expertise:** Requests requiring human specialist knowledge
+**Decision Authority:** High-value decisions requiring human approval
+
+## Transfer Messages
+
+### Professional Transfer Examples
+
+**General Transfer:**
+
+```
+"I'd be happy to connect you with someone who can give you more detailed assistance.
+Please hold while I transfer your call."
+```
+
+**Department-Specific Transfer:**
+
+```
+"Let me connect you with our [department] specialist who can help you with this request.
+One moment please."
+```
+
+**Urgent Transfer:**
+
+```
+"I understand this needs immediate attention.
+I'm connecting you with our priority support team right now."
+```
+
+**Appointment-Related Transfer:**
+
+```
+"I'll transfer you to our scheduling coordinator who can find the perfect appointment time for you.
+Please hold on."
+```
+
+## Business Type Configurations
+
+### Medical Practice
+
+**Urgent Medical Transfer:**
+
+- Condition: "severe pain, emergency symptoms, urgent medical needs"
+- Phone: Doctor's direct line or emergency contact
+- Message: "I'm connecting you with our medical team immediately."
+
+**Appointment Scheduling Transfer:**
+
+- Condition: "complex scheduling needs, multiple appointments, special requirements"
+- Phone: Scheduling coordinator
+- Message: "Let me connect you with our scheduling specialist."
+
+### Legal Office
+
+**Complex Legal Matter Transfer:**
+
+- Condition: "detailed legal questions, case consultation, court matters"
+- Phone: Attorney direct line
+- Message: "I'll connect you with one of our attorneys for a detailed consultation."
+
+**Billing/Payment Transfer:**
+
+- Condition: "billing questions, payment issues, fee disputes"
+- Phone: Office manager or billing department
+- Message: "I'm transferring you to our office manager who handles billing matters."
+
+### Restaurant
+
+**Large Group Reservations:**
+
+- Condition: "parties over 8 people, special events, private dining"
+- Phone: Manager or event coordinator
+- Message: "For large groups, let me connect you with our manager who can arrange everything perfectly."
+
+**Special Dietary Needs:**
+
+- Condition: "severe allergies, complex dietary restrictions, special menu requests"
+- Phone: Head chef or manager
+- Message: "I'm connecting you with our chef who can discuss your dietary needs in detail."
+
+## Quick Setup Guide
+
+1. **Access Transfer Settings:** AI Receptionist → Call Transfer
+2. **Add New Scenario:** Click "Add New Transfer Scenario"
+3. **Define Condition:** Describe when this transfer should happen
+4. **Set Phone Number:** Enter the destination number with country code
+5. **Create Transfer Message:** Write professional pre-transfer message
+6. **Test Configuration:** Verify transfers work correctly
+7. **Save and Activate:** Enable for live calls
+
+### Configuration Best Practices
+
+**Phone Number Format:** Always use international format (+1234567890)
+**Transfer Messages:** Keep under 10 seconds, be reassuring
+**Condition Clarity:** Use specific, clear trigger descriptions
+**Multiple Scenarios:** Set up different transfers for different needs
+**Fallback Transfer:** Have a general transfer option for edge cases
+
+Call transfer setup ensures customers get the right human help when they need it, creating seamless experiences between AI efficiency and human expertise.

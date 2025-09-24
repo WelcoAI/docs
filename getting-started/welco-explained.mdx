@@ -1,0 +1,215 @@
+---
+title: "Welco Structure Explained"
+description: "Understand how Welco AI Receptionist is architected with Core Receptionist, Prompts, Knowledge Base, and Workflows working together to handle your business calls intelligently."
+---
+
+# Welco Structure Explained
+
+Welco AI Receptionist is built on a layered architecture that combines AI intelligence with customizable business logic. Understanding this structure helps you configure your receptionist effectively and troubleshoot issues when they arise.
+
+## System Architecture Overview
+
+Welco operates through a hierarchical system where each layer serves a specific purpose in handling incoming calls:
+
+```
+Welco AI Receptionist
+         ↓
+Core Receptionist ──→ Prompt
+         │              ↑
+         │         Knowledge
+         ↓
+Workflows as Skills
+    ├── Workflow 1
+    ├── Workflow 2
+    └── Workflow 3
+```
+
+---
+
+## Core Receptionist
+
+The **Core Receptionist** is the foundation of your AI phone system. It acts as the central processing unit that:
+
+### Primary Functions
+
+- **Call Routing**: Determines how incoming calls are handled
+- **Context Management**: Maintains conversation context throughout the call
+- **Skill Coordination**: Decides which workflows to activate based on caller needs
+- **Fallback Handling**: Manages situations when specific workflows can't handle requests
+
+### Key Characteristics
+
+- Always active and listening during calls
+- Makes real-time decisions about call flow
+- Integrates with both prompt and knowledge systems
+- Coordinates multiple workflows as needed
+
+💡 **Think of it as**: Your virtual receptionist's "brain" that processes information and makes decisions about how to help each caller.
+
+---
+
+## Prompt System
+
+The **Prompt** defines your AI receptionist's personality, communication style, and basic behavior patterns.
+
+### What Prompts Control
+
+- **Conversational Tone**: Professional, friendly, casual, or formal
+- **Response Style**: Direct answers vs. conversational responses
+- **Brand Voice**: How your business personality comes through
+- **Greeting Behavior**: How calls are initially handled
+- **Escalation Triggers**: When to transfer calls to humans
+
+### Prompt Configuration
+
+Your prompt should include:
+
+1. **Business Context**: What your company does
+2. **Personality Traits**: How the AI should sound and behave
+3. **Communication Guidelines**: Dos and don'ts for conversations
+4. **Fallback Instructions**: What to do when unsure
+
+<Info>
+   **Important**: The prompt works closely with your knowledge base - they should complement each other.
+</Info>
+
+---
+
+## Knowledge Base
+
+Your **Knowledge** system contains the factual information your AI receptionist uses to answer questions accurately.
+
+### Knowledge Sources
+
+- **Business Information**: Hours, location, services, pricing
+- **FAQ Content**: Common questions and their answers
+- **Policy Documents**: Return policies, terms of service, procedures
+- **Product Details**: Features, specifications, availability
+- **Staff Information**: Who to transfer calls to for specific topics
+
+### How Knowledge Works
+
+1. **Information Retrieval**: AI searches knowledge base for relevant information
+2. **Context Matching**: Finds the best information for the current conversation
+3. **Response Generation**: Combines knowledge with prompt personality to create natural answers
+4. **Confidence Scoring**: Determines how certain the AI is about its answer
+
+<Tip>
+  **Best Practice**: Keep your knowledge base updated and well-organized for the most accurate responses.
+</Tip>
+
+---
+
+## Workflows as Skills
+
+**Workflows** act as specialized skills that your Core Receptionist can activate when specific situations arise. Each workflow handles particular types of interactions or business processes.
+
+### How Workflows Function as Skills
+
+- **Skill Activation**: Core Receptionist determines when to use each workflow
+- **Specialized Processing**: Each workflow handles specific business logic
+- **Skill Coordination**: Multiple workflows can work together on complex requests
+- **Seamless Integration**: Workflows feel like natural extensions of the conversation
+
+### Common Workflow Types
+
+#### Workflow 1: Appointment Scheduling
+
+- **Trigger**: Caller wants to book an appointment
+- **Skills**: Check calendar availability, book appointments, send confirmations
+- **Integration**: Connects with your calendar system
+
+#### Workflow 2: Order Processing
+
+- **Trigger**: Customer wants to place an order or check order status
+- **Skills**: Product lookup, inventory checking, payment processing
+- **Integration**: Connects with your e-commerce or inventory system
+
+#### Workflow 3: Support & Troubleshooting
+
+- **Trigger**: Customer has a problem or technical issue
+- **Skills**: Problem diagnosis, solution guidance, ticket creation
+- **Integration**: Connects with your support system or CRM
+
+### Workflow Coordination
+
+- **Sequential Execution**: One workflow completes, then another begins
+- **Parallel Processing**: Multiple workflows can run simultaneously when needed
+- **Conditional Logic**: Workflows activate based on specific conditions or caller responses
+- **Error Handling**: Graceful fallbacks when workflows encounter issues
+
+---
+
+## How the Components Work Together
+
+### Call Flow Example
+
+1. **Call Arrives**: Core Receptionist answers using your configured greeting
+2. **Prompt Application**: AI uses your prompt to respond in your brand voice
+3. **Knowledge Lookup**: When questions arise, AI searches your knowledge base
+4. **Skill Assessment**: Core Receptionist evaluates if workflows are needed
+5. **Workflow Activation**: Appropriate workflows activate to handle specific requests
+6. **Coordination**: All components work together to provide seamless service
+
+### Information Flow
+
+- **Prompt** guides how information is communicated
+- **Knowledge** provides the factual content to communicate
+- **Workflows** handle complex business processes
+- **Core Receptionist** orchestrates everything smoothly
+
+---
+
+## Configuration Best Practices
+
+### Prompt Optimization
+
+- Keep prompts clear and specific about your business
+- Include examples of how to handle common situations
+- Define escalation criteria clearly
+- Test different personality approaches
+
+### Knowledge Base Management
+
+- Organize information logically by topic
+- Keep content current and accurate
+- Write in natural, conversational language
+- Include variations of how customers might ask questions
+
+### Workflow Design
+
+- Create workflows for your most common business processes
+- Test workflows thoroughly before going live
+- Design clear error handling and fallback scenarios
+- Monitor workflow performance and optimize regularly
+
+### System Integration
+
+- Ensure all components reflect consistent branding
+- Align prompts with knowledge base content
+- Design workflows that complement each other
+- Regular testing of the complete system
+
+---
+
+## Next Steps
+
+Now that you understand Welco's structure:
+
+### Essential Configuration
+
+1. [**Set Up Your Prompt**](link-to-prompt-config) - Define your AI's personality and behavior
+2. [**Build Your Knowledge Base**](link-to-knowledge-base) - Add your business information
+3. [**Create Your First Workflow**](link-to-workflow-creation) - Automate a common business process
+4. [**Test Your Configuration**](link-to-testing-guide) - Ensure everything works together
+
+### Advanced Optimization
+
+1. [**Workflow Coordination**](link-to-advanced-workflows) - Create complex multi-workflow processes
+2. [**Performance Monitoring**](link-to-analytics) - Track how well your system performs
+3. [**Integration Setup**](link-to-integrations) - Connect with your business tools
+4. [**Continuous Improvement**](link-to-optimization) - Refine your configuration over time
+
+Understanding this architecture empowers you to build a more effective AI receptionist that truly serves your business needs.
+
+---

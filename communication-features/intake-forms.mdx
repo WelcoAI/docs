@@ -1,0 +1,252 @@
+---
+title: "Intake Forms Management - Design Forms & Collect Responses"
+description: "Create custom intake forms for your AI receptionist. Design forms, collect caller responses during calls, and manage submissions through an easy-to-use interface."
+---
+
+# Intake Forms Management
+
+Intake forms in Welco AI allow you to collect structured information from callers through automated questionnaires during phone conversations. This powerful feature enables your AI receptionist to gather essential customer details, contact information, and specific requirements systematically and consistently.
+
+## Prerequisites
+
+Before setting up intake forms, ensure you have:
+
+- An active Welco AI subscription with intake forms feature enabled
+- Your AI receptionist configured and working
+- Admin access to your Welco AI dashboard
+- Basic understanding of your customer information requirements
+
+## Accessing Intake Forms
+
+Intake forms are managed through the **Connections** tab in your Welco AI dashboard. This centralizes all workflow configurations including transfer calls, text messaging, and intake forms.
+
+### Navigation Steps
+
+![intake forms](/images/Screenshot2025-09-24at4.58.54PM.png)
+
+1. **Login** to your Welco AI dashboard
+2. **Navigate** to the Connections tab in the main navigation menu
+3. **Locate** the "Intake Form" workflow card (displayed with a clipboard icon)
+4. **Click** the Setup button to begin configuration
+
+<Info>
+  The intake forms feature may not be visible if your subscription plan doesn't include this functionality. Contact support to upgrade your plan if needed.
+</Info>
+
+## Creating and Designing Custom Forms
+
+Intake forms in Welco AI are scenario-based, meaning you can create different forms for different situations or customer types.
+
+### Creating Your First Intake Form
+
+![intake forms scenarios](/images/Screenshot2025-09-24at4.59.11PM.png)
+
+1. **Access the Intake Forms workflow** in the Connections tab
+2. **Click "Add Scenario"** to create a new form
+3. **Configure the form details**:
+   - **Scenario Description**: Define when this form should be triggered
+   - **Questions**: Add the information you want to collect
+   - **Next Action**: Specify what the AI should do after form completion
+
+### Form Configuration Components
+
+#### Scenario Description
+
+The scenario description tells your AI receptionist when to use this particular intake form. Write clear, specific descriptions such as:
+
+- "Collect customer information for new service inquiries"
+- "Gather details for appointment scheduling requests"
+- "Capture contact information for quote requests"
+
+#### Questions Setup
+
+Questions are the core of your intake form. Each question you add will be asked sequentially during the call.
+
+**Supported Question Types:**
+
+- **Text**: Open-ended responses (names, descriptions, comments)
+- **Number**: Numeric values (quantities, ages, prices)
+- **Email**: Email address collection with validation
+- **Phone**: Phone number collection with formatting
+
+**Best Practices for Questions:**
+
+- Keep questions concise and specific
+- Use natural language that flows well in conversation
+- Order questions logically (general to specific)
+- Limit to 5-8 questions to maintain caller engagement
+
+#### Next Action Configuration
+
+Define what happens after the form is completed:
+
+- Transfer to a specific team member
+- Schedule a callback
+- Send collected information via email
+- Continue with additional conversation flow
+
+### Example Form Configuration
+
+```
+Scenario: "Collect information for new customer inquiries"
+
+Questions:
+1. "What's your full name?" (Text)
+2. "What's your phone number?" (Phone)
+3. "What's your email address?" (Email)
+4. "How many employees does your company have?" (Number)
+5. "What services are you interested in?" (Text)
+
+Next Action: "Transfer to sales team and email collected information to sales@company.com"
+```
+
+## Form Integration with AI Conversation Flow
+
+### How Forms Work During Calls
+
+1. **Trigger Activation**: The AI determines when to activate an intake form based on the scenario description
+2. **Question Sequence**: Questions are asked one at a time in the order you configured
+3. **Response Collection**: The AI waits for each response before proceeding
+4. **Validation**: Field-specific validation ensures data quality
+5. **Completion Actions**: The specified next action is executed automatically
+
+### Conversation Flow Integration
+
+Intake forms integrate seamlessly with your AI's conversation flow:
+
+- **Natural Transitions**: "I'd like to collect some information to help you better..."
+- **Context Awareness**: The AI maintains conversation context while collecting form data
+- **Error Handling**: Automatic retry for unclear or invalid responses
+- **Completion Confirmation**: "Thank you, I've collected all the information I need..."
+
+### Workflow Canvas Integration
+
+Intake forms can also be used within the visual workflow builder:
+
+1. **Add Intake Form Node** to your workflow canvas
+2. **Configure Form Settings** directly in the node
+3. **Connect to Other Nodes** for complex conversation flows
+4. **Set Transitions** for different completion scenarios (success/failure)
+
+## Collecting Responses During Calls
+
+### Response Collection Process
+
+When an intake form is triggered during a call:
+
+1. **Form Activation**: The AI seamlessly transitions into data collection mode
+2. **Sequential Questioning**: Each question is asked clearly and naturally
+3. **Response Validation**: Answers are validated according to field type
+4. **Retry Mechanism**: Invalid responses prompt for clarification
+5. **Progress Tracking**: The system tracks completion status
+
+## Viewing and Managing Form Submissions
+
+### Accessing Submission Data
+
+![access intake forms data](/images/Screenshot2025-09-24at5.01.41PM.png)
+
+Form submissions are automatically stored and can be accessed through the **Call Management** section:
+
+1. **Navigate** to Call Management in your dashboard
+2. **Select** the "Intake Forms" tab
+3. **View** all submitted forms with timestamps and caller information
+
+### Submission Details
+
+Each form submission includes:
+
+- **Caller Information**: Phone number, call time
+- **Form Scenario**: Which form was used
+- **Complete Responses**: All collected answers
+- **Session Details**: Call duration, agent information
+- **Completion Status**: Whether form was fully completed
+
+### Filtering and Search
+
+Use the Call Management filters to find specific submissions:
+
+- **Date Range**: Filter by submission date
+- **Phone Number**: Search for specific caller submissions
+- **Export Options**: Download submissions as CSV files
+
+## Troubleshooting Common Issues
+
+### Form Not Triggering
+
+**Symptoms**: AI doesn't activate intake form during calls
+**Possible Causes**:
+
+- Scenario description too vague or specific
+- Form not saved or activated properly
+- Subscription doesn't include intake forms feature
+
+**Solutions**:
+
+1. **Review scenario description** - make it clear and broad enough
+2. **Verify form status** - ensure it's saved and active
+3. **Check subscription** - confirm intake forms feature is enabled
+4. **Test with keywords** - use scenario-specific terms during test calls
+
+### Incomplete Form Submissions
+
+**Symptoms**: Forms started but not completed
+**Possible Causes**:
+
+- Too many questions causing caller fatigue
+- Unclear questions leading to confusion
+- Technical interruptions during calls
+
+**Solutions**:
+
+1. **Reduce question count** - limit to 5-8 essential questions
+2. **Clarify wording** - use simple, conversational language
+3. **Test thoroughly** - conduct test calls to identify issues
+4. **Review call logs** - check where submissions typically stop
+
+### Data Quality Issues
+
+**Symptoms**: Incorrect or incomplete response data
+**Possible Causes**:
+
+- Wrong field types selected
+- Unclear question wording
+- Validation too strict or too lenient
+
+**Solutions**:
+
+1. **Verify field types** - match field type to expected data
+2. **Improve question clarity** - be more specific about required format
+3. **Review validation rules** - adjust if causing issues
+4. **Provide examples** - include format examples in questions when helpful
+
+### Form Responses Not Appearing
+
+**Symptoms**: Can't find submitted form data
+**Possible Causes**:
+
+- Looking in wrong time period
+- Filtering applied incorrectly
+- Data sync delays
+
+**Solutions**:
+
+1. **Expand date range** - check broader time periods
+2. **Clear filters** - remove all filters and search again
+3. **Wait for sync** - allow time for data processing
+4. **Check phone number format** - try different format variations
+
+<Info>
+  If issues persist after trying these solutions, contact Welco AI support with specific details about your form configuration and the problems you're experiencing.
+</Info>
+
+### Advanced Configuration
+
+Once comfortable with basic forms:
+
+- **Explore Workflow Integration**: Use intake forms within complex conversation workflows
+- **Set up Conditional Logic**: Create forms that adapt based on previous responses
+- **Configure Advanced Actions**: Set up automated responses to form submissions
+- **Analyze Performance**: Use submission data to improve your customer intake process
+
+Intake forms transform how your AI receptionist collects customer information, making the process more systematic, efficient, and professional. Start with simple forms and gradually add complexity as you become more familiar with the system.

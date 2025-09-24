@@ -1,0 +1,267 @@
+---
+title: "Voice Models & Languages Configuration"
+description: "Configure AI voices and language preferences for your Welco AI receptionist. Learn about voice options, language settings, performance implications, and how to optimize for your business needs."
+---
+
+# Voice Models & Languages Configuration
+
+Select the perfect AI voice and configure language preferences to create the ideal caller experience for your business. Understanding voice model differences, language options, and performance impacts will help you make the best choices for your AI receptionist.
+
+![openai realtime voice model](/images/Screenshot2025-09-24at2.51.22PM.png)
+
+### Voice Processing Models
+
+#### **Real-time Voice Models**
+
+Real-time models process audio streams continuously, enabling natural conversation flow with minimal latency.
+
+**OpenAI Realtime API:**
+
+- **Latency**: 200-400ms end-to-end
+- **Technology**: Direct audio-to-audio processing
+- **Experience**: Natural conversation interruptions and overlapping speech
+- **Quality**: High-quality with optimized real-time performance
+- **Best for**: Interactive conversations requiring immediate responses
+
+#### **Traditional TTS/STT Models**
+
+Traditional models use separate Speech-to-Text and Text-to-Speech processing with AI reasoning in between.
+
+**Processing Flow:**
+
+```
+Caller Speech → STT → AI Processing → TTS → AI Response
+   ~200ms      ~500ms    ~300ms     ~400ms
+Total: ~1400ms average latency
+```
+
+**Advantages:**
+
+- **Higher accuracy**: More processing time allows for better transcription
+- **Better reasoning**: AI has full text context for complex decision making
+- **Flexibility**: Can modify, analyze, and optimize text before speech synthesis
+- **Debugging**: Full visibility into conversation transcripts
+
+**Trade-offs:**
+
+- **Higher latency**: Multiple processing steps create longer response times
+- **Less natural flow**: Pauses between caller speech and AI response
+- **Interruption handling**: More difficult to handle natural conversation overlaps
+
+### Technology Comparison
+
+| Aspect                    | Real-time Models                | TTS/STT Models                      |
+| ------------------------- | ------------------------------- | ----------------------------------- |
+| **End-to-end Latency**    | 200-500ms                       | 800-1500ms                          |
+| **Conversation Flow**     | Natural, interruptible          | Turn-based with pauses              |
+| **Processing Visibility** | Limited (audio-to-audio)        | Full (complete transcripts)         |
+| **Accuracy**              | Good (optimized for speed)      | Excellent (optimized for precision) |
+| **Complex Reasoning**     | Limited (real-time constraints) | Superior (full context available)   |
+| **Interruption Handling** | Native support                  | Requires special handling           |
+| **Debugging**             | Audio-based only                | Full text-based analysis            |
+| **Cost**                  | Higher (specialized models)     | Lower (standard APIs)               |
+
+### Voice Provider Technologies
+
+#### **Real-time Voice Providers**
+
+**OpenAI Realtime (Premium):**
+
+- Ultra-low latency conversational AI
+- Native interruption and overlap handling
+- Emotional tone and inflection awareness
+- Direct audio processing without text intermediary
+- **Latency**: 200-400ms
+- **Best for**: High-end customer service, complex consultation
+
+**ElevenLabs TTS + Deepgram STT:**
+
+- Ultra-realistic AI voices with emotional nuance
+- High-accuracy speech recognition
+- Premium quality with higher processing time
+- **Combined Latency**: 900-1200ms
+- **Best for**: High-quality interactions where accuracy is critical
+
+**OpenAI TTS + Deepgram STT:**
+
+- Fast, reliable speech processing
+- Good quality with optimized performance
+- Consistent delivery across different content types
+- **Combined Latency**: 700-1000ms
+- **Best for**: Balanced quality and performance needs
+
+## Accessing Voice & Language Configuration
+
+![My Receptionist Pn](/images/my-receptionist.png)
+
+1. Navigate to your **Basic Settings** dashboard
+2. Select **Voice Selection** settings
+3. You'll see options for:
+   - Voice model selection
+   - Language preferences
+   - Regional accent settings
+   - Performance optimization options
+
+## Voice Model Selection
+
+### Available Voice Options
+
+#### **Professional Voices (Recommended for Business)**
+
+**Sarah (ElevenLabs) - Professional Female**
+
+- Characteristics: Clear, authoritative, friendly
+- Best for: Medical practices, legal offices, corporate services
+- Latency: ~800ms
+- Languages: English (US, UK, AU)
+
+```json
+Voice Profile: {
+  "tone": "Professional yet approachable",
+  "speed": "Moderate pace with clear articulation",
+  "style": "Business-appropriate warmth"
+}
+```
+
+**Michael (ElevenLabs) - Professional Male**
+
+- Characteristics: Confident, reassuring, articulate
+- Best for: Financial services, consulting, technical support
+- Latency: ~850ms
+- Languages: English (US, UK)
+
+**Emma (OpenAI) - Conversational Female**
+
+- Characteristics: Natural, friendly, efficient
+- Best for: Restaurants, retail, general customer service
+- Latency: ~400ms
+- Languages: Multiple languages supported
+
+#### **Specialized Voices**
+
+**Isabella (ElevenLabs) - Warm Female**
+
+- Characteristics: Caring, empathetic, gentle
+- Best for: Healthcare, counseling, senior services
+- Latency: ~900ms
+- Languages: English, Spanish
+
+**James (Google) - Authoritative Male**
+
+- Characteristics: Deep, commanding, trustworthy
+- Best for: Legal, insurance, high-stakes services
+- Latency: ~600ms
+- Languages: 20+ languages with regional variants
+
+**Aria (OpenAI) - Energetic Female**
+
+- Characteristics: Enthusiastic, upbeat, engaging
+- Best for: Entertainment, events, creative services
+- Latency: ~450ms
+- Languages: Multiple languages with emotional range
+
+## Troubleshooting Voice Issues
+
+### Common Voice Problems
+
+#### **Issue: Voice Sounds Robotic**
+
+**Symptoms:**
+
+- Monotone delivery
+- Unnatural pauses
+- Lack of emotional variation
+- Mechanical pronunciation
+
+**Solutions:**
+
+1. Switch to premium voice models (ElevenLabs)
+2. Add natural punctuation to your content
+3. Use contractions and conversational language
+4. Adjust speaking speed to more natural pace
+5. Enable advanced prosody settings
+
+#### **Issue: High Latency Affecting Conversations**
+
+**Symptoms:**
+
+- Long pauses before AI responds
+- Callers speaking over the AI
+- Conversation flow interruptions
+- Caller frustration with delays
+
+**Solutions:**
+
+1. Switch to lower-latency voice provider (OpenAI)
+2. Enable response streaming
+3. Pre-cache common responses
+4. Optimize text length before voice synthesis
+5. Consider regional voice server selection
+
+#### **Issue: Pronunciation Errors**
+
+**Symptoms:**
+
+- Business name mispronounced
+- Technical terms spoken incorrectly
+- Names and places pronounced wrong
+- Industry jargon not recognized
+
+**Solutions:**
+
+1. Add terms to pronunciation dictionary
+2. Use phonetic spelling in content
+3. Test voice with your specific vocabulary
+4. Configure industry-specific voice models
+5. Provide alternative text representations
+
+#### **Issue: Language Detection Failures**
+
+**Symptoms:**
+
+- Wrong language selected for caller
+- Mixing languages inappropriately
+- Defaulting to wrong language
+- Confusion in multilingual scenarios
+
+**Solutions:**
+
+1. Adjust detection confidence threshold
+2. Add explicit language selection option
+3. Improve greeting language indicators
+4. Test with various accents and dialects
+5. Configure better fallback strategies
+
+## Best Practices for Voice & Language
+
+### Business Type Recommendations
+
+**Healthcare Practices:**
+
+- Voice: Warm, empathetic female voice (Isabella/ElevenLabs)
+- Speed: Slightly slower for complex medical terms
+- Languages: Match patient demographics
+- Accent: Local regional accent for familiarity
+
+**Legal Services:**
+
+- Voice: Authoritative, clear male or female (James/Google)
+- Speed: Moderate with clear articulation
+- Languages: Professional language variants
+- Accent: Neutral or prestigious local accent
+
+**Restaurants & Hospitality:**
+
+- Voice: Friendly, enthusiastic (Emma/OpenAI)
+- Speed: Natural conversational pace
+- Languages: Local community languages
+- Accent: Welcoming local or neutral
+
+**Technical Support:**
+
+- Voice: Clear, patient, knowledgeable
+- Speed: Moderate with technical term emphasis
+- Languages: International English variants
+- Accent: Clear, internationally understood
+
+The right voice and language configuration creates a welcoming, professional experience that builds trust and facilitates successful interactions with your AI receptionist.

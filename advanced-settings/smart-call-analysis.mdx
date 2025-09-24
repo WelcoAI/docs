@@ -1,0 +1,71 @@
+---
+title: "Smart Call Analysis"
+description: "Set up automated call insights and data extraction for your Welco AI receptionist. Configure custom fields to capture important information from every conversation automatically."
+---
+
+# Smart Call Analysis
+
+Automatically extract valuable insights and data from every call to improve your business operations and customer understanding.
+
+## What It Does
+
+Smart Call Analysis uses AI to automatically:
+
+- Extract key information from conversations (names, phone numbers, appointment preferences)
+- Categorize call types and customer intents
+- Generate summaries of each conversation
+- Capture custom business data points you define
+- Create reports on call patterns and customer needs
+
+## When to Use
+
+**Essential For:**
+
+- Businesses needing detailed call records and analytics
+- Sales teams tracking lead information and conversion data
+- Service businesses collecting customer preferences and requirements
+- Healthcare practices documenting patient information and symptoms
+- Any business wanting to improve operations through call data insights
+
+## How to Configure
+
+![ai smart call analysis](/images/Screenshot2025-09-24at4.23.37PM.png)
+
+### Basic Setup
+
+1. Navigate to **Connections** → **Smart Call Analysis**
+2. Click **Add New Analysis Field**
+3. Define what information to extract from calls
+4. Set the output format and field name
+
+### Analysis Field Types
+
+**Call Summary:**
+
+- Template Type: "Call Summary"
+- Captures: Overall conversation overview
+- Format: Text paragraph
+- Example Output: "Customer called to reschedule dental cleaning appointment due to work conflict"
+
+**Lead Qualification:**
+
+- Template Type: "Sales Data"
+- Captures: Budget, timeline, decision maker status
+- Format: JSON object
+- Example Output: `{"budget": "$5000-10000", "timeline": "next 30 days", "decision_maker": true}`
+
+**Customer Information:**
+
+- Template Type: "Contact Data"
+- Captures: Names, phone numbers, email addresses
+- Format: Structured data
+- Example Output: `{"name": "John Smith", "phone": "+1234567890", "email": "john@email.com"}`
+
+**Service Requests:**
+
+- Template Type: "Service Data"
+- Captures: Service type, urgency, preferred dates
+- Format: Text or JSON
+- Example Output: "Plumbing repair needed - kitchen sink leak, urgent, available weekdays"
+
+Smart Call Analysis transforms conversations into actionable business intelligence, helping you understand customers better and improve your operations automatically.

@@ -17,59 +17,49 @@
             "group": "Getting Started",
             "pages": [
               "index",
-              "how-to-register",
-              "phone-number"
+              "getting-started/how-to-register",
+              "getting-started/quick-setup",
+              "getting-started/welco-explained"
+            ]
+          },
+         {
+            "group": "Prompt Engineering",
+            "pages": [
+              "prompting-guide/prompt-engineering-guide"
             ]
           },
           {
-            "group": "Basic Setup",
+            "group": "Basic Settings",
             "pages": [
-              "configuration/quick-customize",
-              "configuration/knowledge"
+              "basic-settings/greeting-phrase",
+              "basic-settings/voice-models",
+              "basic-settings/common-questions"
             ]
           },
           {
-            "group": "Detailed Configuration",
+            "group": "Knowledge Management",
             "pages": [
-              "configuration/detailed-settings/greeting-phrase",
-              "configuration/detailed-settings/prompts",
-              "configuration/detailed-settings/voice",
-              "configuration/detailed-settings/language",
-              "configuration/detailed-settings/common-question"
+              "knowledge-base-management/text-based-knowledge",
+              "knowledge-base-management/document-upload",
+              "knowledge-base-management/web-content-integration",
+              "knowledge-base-management/faq-knowledge"
             ]
           },
           {
-            "group": "Workflows",
+            "group": "Advanced Settings",
             "pages": [
-              "workflows/transfer",
-              "workflows/text",
-              "workflows/collect-info"
+              "advanced-settings/call-recording",
+              "advanced-settings/auto-hangup",
+              "advanced-settings/background-noise",
+              "advanced-settings/smart-call-analysis"
             ]
           },
           {
-            "group": "Real-Time Integrations",
+            "group": "Communication Features",
             "pages": [
-              "integrations/calendar",
-              "integrations/API"
-            ]
-          },
-          {
-            "group": "Notifications",
-            "pages": [
-              "account/notifications",
-              "notifications/advanced-notifications"
-            ]
-          },
-          {
-            "group": "Call Intelligence",
-            "pages": [
-              "smart-call"
-            ]
-          },
-          {
-            "group": "Web Widget",
-            "pages": [
-              "website-widget"
+              "communication-features/intake-forms",
+              "communication-features/send-sms",
+              "communication-features/transfer-call"
             ]
           }
         ]

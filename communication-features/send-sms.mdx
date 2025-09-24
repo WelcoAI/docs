@@ -1,0 +1,202 @@
+---
+title: "SMS Integration"
+description: "Configure text messaging for your Welco AI receptionist with custom templates and conditional triggers to automatically send SMS messages based on call conversations and customer needs."
+---
+
+# SMS Integration
+
+Set up automated text messaging to send helpful information, confirmations, and follow-ups to callers based on their conversation with your AI receptionist.
+
+## What It Does
+
+SMS Integration allows your AI receptionist to:
+
+- Send appointment confirmations and reminders via text
+- Share business information like addresses, hours, and contact details
+- Provide follow-up information after calls end
+- Send custom messages based on conversation topics
+- Deliver links, directions, and important documents via SMS
+
+## When to Use
+
+**Essential For:**
+
+- Appointment-based businesses needing confirmations
+- Service businesses sharing location details and directions
+- Restaurants sending menu links and reservation confirmations
+- Healthcare practices providing preparation instructions
+- Any business wanting to continue engagement after calls
+
+## How to Configure
+
+### Basic Setup
+
+![how to setup send sms during calls](/images/Screenshot2025-09-24at4.43.11PM.png)
+
+1. Navigate to **Connections** → **SMS Integration**
+2. Click **Send Text Message**
+3. Define when the SMS should be sent
+4. Create your message template
+5. Configure sending preferences
+
+### SMS Template Components
+
+![send text message during calls](/images/Screenshot2025-09-24at4.43.25PM.png)
+
+**Template Name:** Clear identifier for the SMS scenario
+**Send Scenario:** When this SMS should be triggered
+**Message Content:** The text message to send
+**Send Timing:** When to send (immediately, after call, or ask first)
+**Footer Text:** Optional custom signature or business info
+
+### Example SMS Templates
+
+**Appointment Confirmation:**
+
+```json
+{
+  "template_name": "Appointment Confirmation",
+  "send_scenario": "caller books appointment successfully",
+  "message_content": "Your appointment is confirmed for {date} at {time}. We're located at 123 Main St. Reply CANCEL to cancel or call us with questions.",
+}
+```
+
+**Business Information:**
+
+```json
+{
+  "template_name": "Location and Hours",
+  "send_scenario": "caller asks for address or directions",
+  "message_content": "We're located at 456 Oak Avenue, open Mon-Fri 9AM-6PM, Sat 10AM-4PM. Free parking available. Google Maps: https://maps.app.goo.gl/example",
+  "send_timing": "ask_before_sending",
+}
+```
+
+**Service Information:**
+
+```json
+{
+  "template_name": "Service Details",
+  "send_scenario": "caller inquires about specific services",
+  "message_content": "Thanks for your interest in our {service_type}! Here's our service menu with pricing: www.example.com/services. Call us back anytime with questions.",
+  "send_timing": "after_call_ends",
+  "custom_footer": "- Professional Services Co."
+}
+```
+
+## SMS Trigger Scenarios
+
+### Common Trigger Types
+
+**Appointment-Related:**
+
+- "Caller successfully books appointment"
+- "Caller reschedules existing appointment"
+- "Caller requests appointment availability"
+
+**Information Requests:**
+
+- "Caller asks for business address or directions"
+- "Caller inquires about business hours"
+- "Caller requests service pricing information"
+
+**Service Inquiries:**
+
+- "Caller shows interest in specific services"
+- "Caller requests consultation or quote"
+- "Caller asks about availability or scheduling"
+
+**Follow-up Triggers:**
+
+- "Complex conversation requiring additional information"
+- "Caller unable to complete task during call"
+- "Customer service issue requiring follow-up"
+
+## Message Templates
+
+### Professional Message Examples
+
+**Appointment Confirmations:**
+
+```
+"Your appointment with Dr. Smith is confirmed for Tuesday, March 15th at 2:00 PM.
+Please arrive 15 minutes early. Address: 123 Medical Plaza, Suite 200.
+Questions? Call (555) 123-4567"
+```
+
+**Business Information:**
+
+```
+"Thanks for calling! We're located at 789 Business Blvd, open Mon-Fri 8AM-5PM.
+Free parking in rear. Our website: www.example.com
+We look forward to serving you!"
+```
+
+**Service Follow-up:**
+
+```
+"Great speaking with you! Here's the information about our home inspection services:
+www.example.com/inspections
+Includes full report within 24 hours. Ready to schedule? Call us back!"
+```
+
+**Restaurant Reservations:**
+
+```
+"Table for {party_size} confirmed for {date} at {time}!
+Location: 456 Foodie Street, Parking available.
+View menu: www.restaurant.com/menu
+See you soon!"
+```
+
+## Business Type Configurations
+
+### Healthcare Practice
+
+**Appointment Confirmation:**
+
+```
+"Appointment confirmed: {appointment_date} at {appointment_time} with Dr. {doctor_name}.
+Please bring ID and insurance card. Arrive 15 min early.
+Prep instructions: [link if applicable]"
+```
+
+### Restaurant
+
+**Reservation Confirmation:**
+
+```
+"Table for {party_size} reserved for {date} at {time}!
+Special requests noted: {special_requests}
+Location: [address] | Menu: [website]"
+```
+
+### Professional Services
+
+**Consultation Follow-up:**
+
+```
+"Thanks for your interest in our {service_type} services!
+We'll prepare a custom proposal and follow up within 24 hours.
+Portfolio: [website] | Questions: [phone]"
+```
+
+### Retail/E-commerce
+
+**Product Information:**
+
+```
+"Thanks for asking about {product_name}!
+Price: {price} | Availability: {availability}
+Order online: [website] | Store hours: [hours]"
+```
+
+### SMS Best Practices
+
+**Message Length:** Keep under 160 characters when possible
+**Clear Value:** Provide useful information, not just marketing
+**Professional Tone:** Match your business voice and brand
+**Opt-out Option:** Include way for customers to stop messages
+**Variable Testing:** Test all dynamic content works correctly
+
+SMS Integration extends your customer service beyond the phone call, providing lasting value and maintaining engagement with helpful, timely text messages.

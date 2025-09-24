@@ -1,0 +1,180 @@
+---
+title: "Twilio Integration Guide"
+description: "Import your existing Twilio phone number to Welco. Connect your Twilio account and port your number to work with your AI receptionist while maintaining all your existing capabilities."
+---
+
+# Twilio Integration Guide
+
+Already have a Twilio phone number? Import it directly to Welco to keep your existing number while gaining AI receptionist capabilities. This guide walks you through connecting your Twilio account and importing your phone number.
+
+![Getyournumber Pn](/images/getyournumber.png)
+
+<Info>
+  **What This Does**: Importing from Twilio connects your existing phone number to Welco's AI receptionist while keeping your number with Twilio. Your number will route calls through Welco's system automatically.
+</Info>
+
+---
+
+## Before You Start
+
+### Requirements
+
+- Active Twilio account with at least one phone number
+- Twilio Account SID and Auth Token (we'll show you where to find these)
+- Admin access to your Welco account
+
+### What Gets Updated
+
+When you import a Twilio number:
+
+- **Webhook URLs** are updated to route calls to Welco
+- **Original settings** are backed up for easy restoration
+- **SMS and Voice** capabilities remain fully functional
+- **All other Twilio settings** stay unchanged
+
+<Tip>
+  **Reversible Process**: You can remove the imported number anytime, which restores your original Twilio webhook settings.
+</Tip>
+
+---
+
+## Step 1: Get Your Twilio Credentials
+
+### Find Your Account SID and Auth Token
+
+1. Log into your [**Twilio Console**](https://help.twilio.com/articles/14726256820123-What-is-a-Twilio-Account-SID-and-where-can-I-find-it-) at `console.twilio.com`
+2. On the main dashboard, you'll see your account information
+3. **Account SID**: Copy the long string starting with "AC" (like `ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`)
+4. **Auth Token**: Click **"Show"** next to the Auth Token and copy it
+5. **Keep these secure** - you'll enter them in Welco
+
+<Info>
+  **Security Note**: Your Auth Token is sensitive. Never share it publicly or store it in unsecured locations.
+</Info>
+
+### Identify Your Phone Number
+
+1. In Twilio Console, go to **Phone Numbers \> Manage \> Active numbers**
+2. **Find the number** you want to import to Welco
+3. **Note the format**: It should be in international format like `+1234567890`
+4. **Verify it's active** and not already connected to other services
+
+---
+
+## Step 2: Import Your Number to Welco
+
+<img
+  src="/images/Screenshot2025-09-24at10.29.18AM.png"
+  alt="import your twillio number"
+  title="twillio number import"
+  className="mx-auto"
+  style={{ width:"48%" }}
+/>
+
+### Access the Import Function
+
+1. Log into your **Welco dashboard**
+2. Navigate to **Phone Numbers** in the sidebar
+3. Click **"Import from Twilio"** or **"Import Existing Number"**
+4. The import dialog will appear
+
+### Fill in the Import Form
+
+**Twilio Phone Number**
+
+- Enter your number in international format: `+1234567890`
+- Include the country code (e.g., +1 for US numbers)
+
+**Twilio Account SID**
+
+- Paste your Account SID (starts with "AC")
+- Format: `ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
+
+**Twilio Auth Token**
+
+- Paste your Auth Token from the Twilio Console
+- This is used once to configure the integration
+
+**Label for Phone Number**
+
+- Enter a descriptive name like "Main Business Line"
+- This helps you identify the number in your Welco dashboard
+
+**SMS Enabled**
+
+- Toggle **ON** if you want SMS messages routed to Welco
+- Toggle **OFF** to keep SMS with your existing Twilio setup
+
+**Voice Enabled**
+
+- Toggle **ON** to route voice calls to your AI receptionist
+- Toggle **OFF** to keep voice calls with existing Twilio routing
+
+<Info>
+  **Typical Settings**: Most users enable both SMS and Voice to get full AI receptionist capabilities for their imported number.
+</Info>
+
+### Complete the Import
+
+1. **Review all information** for accuracy
+2. Click **"Import from Twilio"**
+3. **Wait for validation** - Welco will verify your credentials and number ownership
+4. **Confirmation message** will appear when import is successful
+
+---
+
+## Step 3: Verify Your Integration
+
+### Check Import Status
+
+1. In your **Phone Numbers** section, your imported number should appear
+2. **Status should show "Active"**
+3. **Label and capabilities** should match what you configured
+
+### Test Your Number
+
+1. **Call your imported number** from another phone
+2. **Your AI receptionist should answer** using your configured settings
+3. **Test SMS** (if enabled) by sending a text to the number
+4. **Check call logs** in your Welco dashboard to confirm calls are being tracked
+
+<Tip>
+  **First Call**: The initial call after import might take an extra second to connect as the system initializes your configuration.
+</Tip>
+
+---
+
+## Troubleshooting Common Issues
+
+### Import Failed - Invalid Credentials
+
+**Problem**: "Invalid Twilio credentials" error
+**Solutions**:
+
+- Verify Account SID starts with "AC" and is complete
+- Check Auth Token was copied correctly without extra spaces
+- Ensure your Twilio account is active and in good standing
+- Try generating a new Auth Token in Twilio Console
+
+### Phone Number Not Found
+
+**Problem**: "Phone number not found in your Twilio account"
+**Solutions**:
+
+- Verify the number format includes country code (+1 for US)
+- Check the number is active in your Twilio Console
+- Ensure you own the number in the account matching your credentials
+- Confirm the number isn't already imported to another Welco account
+
+### Import Successful But Calls Not Working
+
+**Problem**: Number imported but AI doesn't answer calls
+**Solutions**:
+
+- Wait 2-3 minutes for webhook propagation
+- Test from a different phone number
+- Check your AI receptionist configuration is complete
+- Verify business hours settings aren't blocking calls
+- Review call logs for error messages
+
+Your Twilio phone number is now connected to Welco's AI receptionist system. Your existing number gains intelligent call handling capabilities while maintaining all the reliability and features you're used to with Twilio.

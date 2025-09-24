@@ -1,0 +1,147 @@
+---
+title: "How to Business Hours Setup for AI Receptionist?"
+description: "Learn how to configure business hours in Welco. Set weekly schedules, after-hours routing, human agent backup, and automatic call handling for your AI receptionist."
+---
+
+# Business Hours Setup
+
+Configure when your Welco AI receptionist routes calls to human agents versus handling them with AI. Set up custom schedules, define after-hours behavior, and ensure seamless call routing based on your business operating hours.
+
+## Prerequisites
+
+Before configuring business hours, ensure you have:
+
+- A Welco account with an active AI receptionist
+- A phone number configured for human agent routing
+- Your business timezone configured in your profile settings
+- Agent and tenant IDs properly set up in your account
+
+## Understanding Call Routing Logic
+
+Welco uses a smart routing system that determines whether incoming calls should go to your human agents or the AI receptionist based on your configured business hours:
+
+**During Business Hours:**
+
+- Calls are routed to your human agent's phone number
+- If the human agent doesn't answer within the timeout period, the call automatically transfers to the AI receptionist
+- The system respects your configured business days and hours
+
+**Outside Business Hours:**
+
+- All calls are handled directly by the AI receptionist
+- No attempt is made to reach human agents
+- Callers receive immediate AI assistance
+
+## Accessing Business Hours Configuration
+
+<img
+  src="/images/Screenshot2025-09-24at1.39.30PM.png"
+  alt="accessing the profile settings"
+  title="profile settings"
+  style={{ width:"32%" }}
+/>
+
+1. Log into your Welco dashboard
+2. Navigate to **Profile** or **Settings**
+3. Click on **Off-Hours AI Receptionist** or **Business Hours** section
+4. You'll see the current status and configuration options
+
+## Setting Up Basic Configuration
+
+![off hours ai receptionist](/images/Screenshot2025-09-24at1.31.34PM.png)
+
+### Step 1: Enable Business Hours Routing
+
+1. **Toggle Business Hours Routing**: Enable the "Enable business hours routing" switch
+   - When enabled: Calls route based on your schedule
+   - When disabled: All calls go directly to the AI receptionist
+
+<Info>
+  💡 **Tip**: Start with business hours routing disabled to test your AI receptionist behavior before adding human agent routing.
+</Info>
+
+### Step 2: Configure Human Agent Phone Number
+
+1. **Enter Phone Number**: Input your human agent's phone number using the international phone selector
+   - The system supports international numbers with proper country code formatting
+   - Use the dropdown to select your country and enter the local number
+   - Example: For US number (555) 123-4567, select "United States" and enter the number
+2. **Verify Format**: The system automatically formats your number in E.164 format (e.g., +15551234567)
+
+### Step 3: Set Call Timeout Duration
+
+1. **Configure Timeout**: Set how long the system waits for your human agent to answer
+   - **Range**: 5-60 seconds
+   - **Default**: 20 seconds
+   - **Recommended**: 15-25 seconds for optimal user experience
+2. **Understand Timeout Behavior**:
+   - If the human agent answers within the timeout: Call proceeds normally
+   - If no answer within timeout: Call automatically transfers to AI receptionist
+   - The caller experiences a seamless transition without disruption
+
+## Configuring Business Hours Schedule
+
+### Daily Schedule Configuration
+
+For each day of the week, you can:
+
+1. **Enable/Disable**: Toggle whether the day is a business day
+2. **Set Hours**: Configure start and end times using 24-hour format
+   - Start Time: When human agents begin taking calls
+   - End Time: When human agents stop taking calls
+
+**Default Configuration:**
+
+- **Monday-Friday**: 9:00 AM - 5:00 PM (enabled)
+- **Saturday-Sunday**: Disabled (AI handles all calls)
+
+### Weekly Schedule Examples
+
+**Standard Business Hours:**
+
+```
+Monday:    9:00 - 17:00 (enabled)
+Tuesday:   9:00 - 17:00 (enabled)
+Wednesday: 9:00 - 17:00 (enabled)
+Thursday:  9:00 - 17:00 (enabled)
+Friday:    9:00 - 17:00 (enabled)
+Saturday:  Disabled
+Sunday:    Disabled
+```
+
+**Extended Hours Service:**
+
+```
+Monday:    8:00 - 20:00 (enabled)
+Tuesday:   8:00 - 20:00 (enabled)
+Wednesday: 8:00 - 20:00 (enabled)
+Thursday:  8:00 - 20:00 (enabled)
+Friday:    8:00 - 20:00 (enabled)
+Saturday:  10:00 - 16:00 (enabled)
+Sunday:    12:00 - 18:00 (enabled)
+```
+
+**Restaurant Hours:**
+
+```
+Monday:    Disabled (closed)
+Tuesday:   11:00 - 22:00 (enabled)
+Wednesday: 11:00 - 22:00 (enabled)
+Thursday:  11:00 - 22:00 (enabled)
+Friday:    11:00 - 23:00 (enabled)
+Saturday:  11:00 - 23:00 (enabled)
+Sunday:    11:00 - 21:00 (enabled)
+```
+
+### Time Zone Considerations
+
+- Business hours are calculated based on your profile timezone setting
+- The system uses moment-timezone library for accurate time calculations
+- Current time display shows your local timezone
+- Supported timezones include major regions worldwide
+
+<Tip>
+  💡 **Pro Tip**: The system displays your current status in real-time. Use this to verify your configuration is working correctly.
+</Tip>
+
+By following this guide, you'll have a fully configured business hours system that intelligently routes calls between human agents and your AI receptionist, providing seamless service to your callers around the clock.
