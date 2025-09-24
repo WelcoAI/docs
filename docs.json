@@ -61,6 +61,12 @@
               "communication-features/send-sms",
               "communication-features/transfer-call"
             ]
+          },
+          {
+            "group": "Notifications & Alerts",
+            "pages": [
+              "notifications/email-and-text-notifications"
+            ]
           }
         ]
       }
