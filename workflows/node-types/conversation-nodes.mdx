@@ -1,0 +1,218 @@
+---
+title: "Conversation Nodes - AI Interactions"
+description: "Configure AI conversation nodes to handle dynamic interactions with callers. Advanced prompt engineering and response handling."
+---
+# Conversation Nodes
+
+Conversation nodes are the primary interaction points in your workflow where your AI receptionist engages in natural dialogue with callers. These nodes handle the dynamic, AI-powered conversations that make your receptionist intelligent and responsive to caller needs.
+
+## Overview
+
+Conversation nodes serve as the voice of your AI receptionist, managing everything from greetings and questions to complex information gathering. They use AI to understand caller intent and respond naturally while maintaining the conversation flow you've designed in your workflow.
+
+![conversational nodes](/images/conversationnode.png)
+
+**Key Features:**
+
+- AI-powered natural language processing
+- Dynamic response generation
+- Multiple transition paths based on responses
+- Configurable conversation styles and prompts
+- Context awareness from previous interactions
+
+## When to Use Conversation Nodes
+
+### Primary Use Cases
+
+**Natural Dialogue Management**
+
+- Greeting callers with personalized welcomes
+- Asking questions and responding to answers
+- Explaining services or processes naturally
+- Handling follow-up questions and clarifications
+
+**Information Collection**
+
+- Gathering caller details through natural conversation
+- Qualifying prospects with conversational questions
+- Understanding caller needs and preferences
+- Collecting feedback or preferences
+
+**Process Guidance**
+
+- Explaining next steps in a process
+- Providing instructions or directions
+- Walking callers through procedures
+- Offering options and handling choices
+
+## Configuration Options
+
+### Content Types
+
+Conversation nodes support two main content types:
+
+#### 1. AI Prompt Mode (Recommended)
+
+**Use When**: You want natural, context-aware responses that can adapt to different situations.
+
+In prompt mode, you provide instructions for how the AI should behave rather than exact words to say:
+
+```
+You are a friendly medical receptionist. Ask the caller about their appointment preferences including:
+- Preferred date and time
+- Type of appointment needed
+- Any scheduling constraints
+- Insurance information if this is their first visit
+
+Keep the conversation natural and empathetic. If they seem confused, offer to help explain the process.
+```
+
+**Benefits:**
+
+- Adapts responses based on caller's communication style
+- Handles unexpected questions gracefully
+- Maintains natural conversation flow
+- Can reference previous conversation context
+
+#### 2. Static Response Mode
+
+**Use When**: You need exact, consistent wording for legal, regulatory, or brand messaging requirements.
+
+In static mode, you specify exactly what the AI will say:
+
+```
+"Thank you for calling ABC Medical Center. I'm here to help you schedule an appointment. May I have your full name and date of birth to get started?"
+```
+
+**Benefits:**
+
+- Guaranteed consistent messaging
+- Precise control over wording
+- Meets compliance requirements
+- Predictable responses
+
+### Transition Management
+
+Conversation nodes support multiple transition paths that determine where the conversation flows next:
+
+#### Prompt-Based Transitions
+
+Let the AI decide the next step based on the conversation content:
+
+```
+Transition: "If caller wants to schedule appointment"
+Target: Appointment Booking Node
+
+Transition: "If caller has questions about services"
+Target: Service Information Node
+
+Transition: "If caller wants to speak to someone"
+Target: Transfer Call Node
+```
+
+#### Equation-Based Transitions
+
+Use specific conditions based on extracted variables:
+
+```
+Variable: caller_type
+Condition: equals "existing_patient"
+Target: Existing Patient Flow
+
+Variable: urgency_level
+Condition: greater_than 7
+Target: Urgent Care Transfer
+```
+
+## Best Practices
+
+### Conversation Design
+
+**Keep It Natural**
+
+- Write prompts as if you're training a human receptionist
+- Use conversational language rather than robotic scripts
+- Include personality traits that match your brand voice
+
+**Be Specific About Goals**
+
+- Clearly state what information you need to collect
+- Specify how the AI should handle different caller types
+- Define the tone and approach for the conversation
+
+**Plan for Variations**
+
+- Account for different ways callers might express the same need
+- Include guidance for handling off-topic questions
+- Prepare responses for common edge cases
+
+### Transition Strategy
+
+**Use Multiple Paths**
+
+- Create transitions for the most likely conversation outcomes
+- Always include a fallback transition for unexpected responses
+- Consider both positive and negative responses
+
+**Be Specific in Conditions**
+
+- Make transition conditions clear and mutually exclusive
+- Test edge cases where multiple transitions might apply
+- Use descriptive names for transitions to aid debugging
+
+**Plan the Flow**
+
+- Map out the full conversation before building
+- Consider what happens after each possible response
+- Ensure every path leads to a logical next step or conclusion
+
+## Troubleshooting
+
+### Common Issues
+
+**AI Not Following Transitions**
+
+- Review transition conditions for clarity
+- Ensure transitions are mutually exclusive
+- Add fallback transitions for unmatched cases
+
+**Repetitive Responses**
+
+- Vary the prompt language and examples
+- Include conversation context in prompts
+- Check for circular conversation loops
+
+**Missing Information**
+
+- Be explicit about required information in prompts
+- Use follow-up conversation nodes for incomplete responses
+- Consider using Extract Variables nodes after conversations
+
+### Testing and Validation
+
+**Test Different Scenarios**
+
+- Role-play different types of callers
+- Test with various response styles (brief, verbose, confused)
+- Validate transition logic with edge cases
+
+**Monitor Execution Logs**
+
+- Review actual caller interactions
+- Identify common points where conversations break down
+- Optimize prompts based on real usage patterns
+
+<Tip>
+  **Pro Tip**: Start with simple, focused conversation nodes and gradually add complexity. It's easier to debug and maintain several focused conversation nodes than one complex node trying to handle multiple scenarios.
+</Tip>
+
+## Integration with Other Nodes
+
+Conversation nodes work seamlessly with:
+
+- **Extract Variables Nodes**: To structure information collected in conversation
+- **Logic Split Nodes**: To route based on conversation outcomes
+- **Function Nodes**: To take action on information gathered
+- **Transfer Call Nodes**: To escalate when conversation alone isn't sufficient
+
+For complex workflows, use conversation nodes to gather information naturally, then use other node types to process and act on that information systematically.

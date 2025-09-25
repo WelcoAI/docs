@@ -1,0 +1,111 @@
+---
+title: "Extract Variables Nodes - Parse Conversation Data | Welco Docs"
+description: "Configure extract variables nodes to parse and structure information from conversations. AI-powered data extraction and variable management."
+---
+
+# Extract Variables Nodes
+
+Extract Variables nodes use AI to intelligently parse unstructured conversation data and extract specific information into structured variables. They transform natural language responses into organized data points that can be used throughout your workflow.
+
+## Overview
+
+![extract variables nodes](/images/extractvariables1.png)
+
+Extract Variables nodes bridge the gap between natural conversation and structured data processing. They analyze conversation content using natural language processing to identify and extract specific pieces of information, making it available for workflow logic, external integrations, and business processes.
+
+**Key Features:**
+
+- AI-powered natural language processing
+- Flexible extraction patterns and rules
+- Multiple data type support and validation
+- Integration with workflow variables
+- Real-time extraction during conversations
+- Confidence scoring and error handling
+
+## When to Use Extract Variables Nodes
+
+### Data Structuring
+
+**Contact Information Extraction**
+
+- Parse names, phone numbers, and email addresses from conversation
+- Extract addresses and location information
+- Identify company names and job titles
+- Structure contact preferences and availability
+
+**Service Request Processing**
+
+- Extract problem descriptions and categorize issues
+- Identify specific product or service names
+- Parse dates, times, and scheduling preferences
+- Capture urgency levels and priority indicators
+
+**Lead Qualification Data**
+
+- Extract budget ranges and financial information
+- Identify decision-making timelines
+- Parse company size and industry details
+- Capture competitive landscape information
+
+## Integration with Workflow Components
+
+<img
+  src="/images/extractvariable2.png"
+  alt="extracting data "
+  title="Extractvariable2 Pn"
+  className="mx-auto"
+  style={{ width:"54%" }}
+/>
+
+### With Conversation Nodes
+
+**Post-Conversation Extraction**
+
+```
+1. Conversation Node: Natural dialogue with caller
+2. Extract Variables Node: Parse conversation content
+3. Logic Split Node: Route based on extracted data
+4. Function Node: Process structured information
+```
+
+**Iterative Extraction**
+
+```
+1. Conversation Node: Initial information gathering
+2. Extract Variables Node: Parse available information
+3. Logic Split Node: Check for missing required data
+4. Conversation Node: Ask for missing information (if needed)
+5. Extract Variables Node: Parse additional information
+```
+
+### With Logic Split Nodes
+
+**Data-Driven Routing**
+
+```javascript
+// Extract information then route based on values
+Extract: customer_tier, issue_urgency, service_type
+Route Logic:
+- If customer_tier == "premium" AND issue_urgency > 7 � VIP Support
+- If service_type == "emergency" � Emergency Response
+- If customer_tier == "standard" � Standard Support Queue
+```
+
+### With Function Nodes
+
+**Extracted Data Processing**
+
+```javascript
+// Use extracted variables as function inputs
+Extracted Variables:
+- customer_phone: "(555) 123-4567"
+- service_interest: "home installation"
+- budget_range: 5000
+
+Function Node Input:
+- phone_number: {customer_phone}
+- service_type: {service_interest}
+- estimated_budget: {budget_range}
+```
+
+Extract Variables nodes provide powerful AI-driven data extraction capabilities that transform unstructured conversation content into structured, actionable information, enabling sophisticated workflow automation and business process integration.

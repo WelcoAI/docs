@@ -1,0 +1,86 @@
+---
+title: "Call Transfer Nodes - Route to Human Agents "
+description: "Configure call transfer nodes to route calls to human agents, departments, or external numbers. Seamless escalation and handoff management."
+---
+
+# Call Transfer Nodes
+
+Call transfer nodes enable your AI receptionist to seamlessly route calls to human agents, departments, or external phone numbers when conversation alone isn't sufficient. These nodes handle the technical aspects of call routing while maintaining a smooth caller experience.
+
+![transfer call node in workflow](/images/transfercall.png)
+
+## Overview
+
+Transfer nodes serve as bridges between AI automation and human interaction. They intelligently route calls based on availability, business rules, caller needs, or escalation requirements while maintaining context and call quality.
+
+**Key Capabilities:**
+
+- Route calls to specific phone numbers or extensions
+- Implement intelligent routing based on availability
+- Handle transfer failures gracefully with fallback options
+- Maintain call context during transfers
+- Support both warm and cold transfer scenarios
+
+## Configuration and Setup
+
+### Basic Transfer Setup
+
+1. **Configure Target**: Set phone number or agent selection criteria
+2. **Set Transfer Method**: Warm vs cold transfer
+3. **Configure Fallbacks**: Actions when transfer fails
+
+## Best Practices
+
+### Pre-Transfer Preparation
+
+**Qualify Before Transfer**
+
+- Ensure the caller actually needs human assistance
+- Collect all necessary information before transferring
+- Explain why the transfer is necessary and beneficial
+
+**Set Proper Expectations**
+
+- Inform callers they'll be transferred to a human
+- Explain briefly what the receiving party can help with
+- Provide estimated wait times if known
+
+**Gather Context Information**
+
+- Collect caller details and inquiry summary
+- Note any troubleshooting already attempted
+- Capture caller's preferred contact method for follow-up
+
+## Integration Patterns
+
+### CRM Integration Transfer
+
+```
+1. Conversation Node: Collect customer information
+2. Function Node: Look up customer in CRM
+3. Logic Split Node: VIP customer vs standard
+4. Transfer Call Node: Route VIP to priority line
+5. Function Node: Log transfer details in CRM
+```
+
+### Support Escalation Pattern
+
+```
+1. Conversation Node: Understand issue
+2. Function Node: Attempt automated resolution
+3. Logic Split Node: Resolved vs needs escalation
+4. Transfer Call Node: Route to appropriate support tier
+5. SMS Node: Send reference number for follow-up
+```
+
+### Sales Qualification Transfer
+
+```
+1. Extract Variables Node: Collect lead information
+2. Function Node: Score lead quality
+3. Logic Split Node: Qualified vs unqualified
+4. Transfer Call Node: Route qualified leads to sales
+5. Function Node: Update CRM with lead score
+```
+
+Transfer nodes are critical for maintaining the human touch in your AI receptionist system, ensuring that when automation reaches its limits, callers are seamlessly connected to the right human assistance at the right time.

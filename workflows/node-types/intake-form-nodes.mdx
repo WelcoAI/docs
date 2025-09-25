@@ -1,0 +1,159 @@
+---
+title: "Intake Form Nodes - Collect Structured Data "
+description: "Configure intake form nodes to collect structured information from callers. Form design, validation, and data management for workflows."
+---
+
+# Intake Form Nodes
+
+Intake form nodes provide a structured way to collect detailed information from callers during phone conversations. They create interactive forms that guide callers through providing specific data points while maintaining natural conversation flow.
+
+![intake form node](/images/intakeforms.png)
+
+## Overview
+
+Intake form nodes bridge the gap between unstructured conversation and structured data collection. They prompt callers for specific information in a conversational manner while organizing the responses into structured formats for business processing.
+
+**Key Features:**
+
+- Structured data collection within natural conversations
+- Dynamic form fields based on caller responses
+- Built-in validation and error handling
+- Integration with CRM and database systems
+- Multi-step form progression with conditional logic
+- Automatic data formatting and organization
+
+## When to Use Intake Form Nodes
+
+### Structured Information Collection
+
+**Customer Onboarding**
+
+- Collect complete customer profiles and preferences
+- Gather contact information with verification
+- Document service requirements and specifications
+- Capture billing and payment information
+
+**Service Requests**
+
+- Document detailed problem descriptions
+- Collect relevant background information
+- Gather environmental or contextual details
+- Record preferred contact and resolution methods
+
+**Appointment Scheduling**
+
+- Capture comprehensive appointment requirements
+- Collect health or service history information
+- Document special needs or accommodations
+- Record insurance or payment information
+
+### Business Process Integration
+
+**Lead Qualification**
+
+- Systematically collect qualification criteria
+- Document budget, timeline, and decision-making process
+- Capture competitive landscape information
+- Record communication and follow-up preferences
+
+**Support Case Creation**
+
+- Structure issue reporting and categorization
+- Collect system or product information
+- Document troubleshooting steps already attempted
+- Capture urgency and impact assessments
+
+**Compliance Documentation**
+
+- Collect required regulatory information
+- Document consent and authorization details
+- Capture identity verification data
+- Record compliance-specific disclosures
+
+## Integration Patterns
+
+### With Conversation Nodes
+
+**Natural Form Flow**
+
+```
+1. Conversation Node: Explain information needed
+2. Intake Form Node: Collect structured data
+3. Conversation Node: Confirm and summarize information
+4. Logic Split: Route based on collected information
+```
+
+**Form Introduction Pattern**
+
+```
+Conversation: "I'd like to get some information to help us serve you better. This will just take a couple of minutes."
+�
+Intake Form: Collect required information
+�
+Conversation: "Thank you for that information. Based on what you've told me..."
+```
+
+### With Function Nodes
+
+**Data Processing Integration**
+
+```
+1. Intake Form Node: Collect customer information
+2. Function Node: Validate against existing systems
+3. Logic Split: New vs existing customer handling
+4. Function Node: Create or update customer record
+5. Conversation Node: Confirm next steps
+```
+
+**External System Integration**
+
+```
+1. Intake Form Node: Collect service request details
+2. Function Node: Check inventory/availability
+3. Function Node: Calculate pricing
+4. Conversation Node: Present options
+5. Function Node: Process selection
+```
+
+### With Logic Split Nodes
+
+**Conditional Form Routing**
+
+```
+1. Intake Form Node: Initial qualification questions
+2. Logic Split Node: Route based on responses
+   - High priority � Immediate processing
+   - Standard � Normal workflow
+   - Low priority � Self-service options
+3. Additional form nodes as needed per path
+```
+
+## Best Practices
+
+### Form Design Principles
+
+**Keep Forms Focused**
+
+- Collect only necessary information for immediate need
+- Break long forms into logical sections
+- Use progressive disclosure for complex requirements
+- Prioritize essential fields for workflow decisions
+
+**Natural Conversation Flow**
+
+- Introduce forms with clear context and purpose
+- Use conversational prompts rather than field labels
+- Provide examples for complex or ambiguous fields
+- Confirm information naturally within the conversation
+
+**User Experience Optimization**
+
+```javascript
+// Good: Conversational and clear
+"What's the best phone number for us to reach you if we get disconnected?"
+
+// Poor: Formal and confusing
+"Please provide your primary contact telephone number for our records."
+```
+
+Intake form nodes provide powerful structured data collection capabilities that enhance workflow efficiency while maintaining natural conversation flow, enabling businesses to gather comprehensive information needed for effective customer service and business process automation.

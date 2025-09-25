@@ -67,6 +67,20 @@
             "pages": [
               "notifications/email-and-text-notifications"
             ]
+          },
+          {
+            "group": "Workflows",
+            "pages": [
+              "workflows/fundamentals/introduction-to-workflows",
+              "workflows/fundamentals/common-workflow-patterns",
+              "workflows/node-types/call-transfer-nodes",
+              "workflows/node-types/conversation-nodes",
+              "workflows/node-types/extract-variable-nodes",
+              "workflows/node-types/function-nodes",
+              "workflows/node-types/intake-form-nodes",
+              "workflows/node-types/logic-split-nodes",
+              "workflows/node-types/sms-nodes"
+            ]
           }
         ]
       }

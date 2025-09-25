@@ -1,0 +1,165 @@
+---
+title: "Logic Split Nodes - Conditional Routing | Welco Docs"
+description: "Configure logic split nodes for conditional workflow routing based on data, responses, and business rules. Dynamic decision-making in call flows."
+---
+
+# Logic Split Nodes
+
+Logic split nodes are the decision-making brain of your workflows, enabling dynamic routing based on caller data, conversation responses, business rules, and external conditions. They create intelligent branching paths that adapt to different scenarios automatically.
+
+![logic split node for ai receptionist](/images/logicsplitnode.png)
+
+## Overview
+
+Logic split nodes evaluate conditions and route calls down different workflow paths based on the results. They transform linear conversation flows into intelligent, adaptive experiences that respond to caller needs, business constraints, and real-time data.
+
+**Key Features:**
+
+- Conditional routing based on multiple criteria
+- Support for complex boolean logic and equations
+- Integration with workflow variables and external data
+- Multiple output paths with priority handling
+- Real-time condition evaluation
+- Fallback handling for unmatched conditions
+
+## When to Use Logic Split Nodes
+
+### Dynamic Routing Scenarios
+
+**Customer Segmentation**
+
+- Route premium customers to specialized agents
+- Prioritize high-value prospects for immediate attention
+- Direct new vs existing customers to appropriate flows
+- Handle VIP or special account categories
+
+**Business Rules Application**
+
+- Apply different processes based on request type
+- Route by geographic location or time zones
+- Handle seasonal or promotional variations
+- Implement compliance-based routing decisions
+
+**Data-Driven Decisions**
+
+- Route based on inventory availability
+- Direct calls based on agent skills and availability
+- Apply pricing rules and discount eligibility
+- Handle capacity constraints and load balancing
+
+**Conversation Outcomes**
+
+- Route based on caller sentiment or satisfaction
+- Handle different response types from AI conversations
+- Branch on qualification scores or lead quality
+- Direct based on expressed preferences or needs
+
+## Multiple Path Configuration
+
+#### Priority-Based Routing
+
+Evaluate conditions in order of priority:
+
+```javascript
+Priority 1: customer_tier == "enterprise"
+→ Route to Enterprise Support
+
+Priority 2: issue_urgency >= 8
+→ Route to Urgent Queue
+
+Priority 3: customer_tier == "premium"
+→ Route to Premium Support
+
+Default: All other conditions
+→ Route to Standard Support
+```
+
+#### Probability-Based Routing
+
+Distribute traffic across paths using percentages:
+
+```javascript
+Condition: customer_type == "new_lead"
+
+Path A (60%): Route to Senior Sales Agent
+Path B (30%): Route to Junior Sales Agent
+Path C (10%): Route to Automated Nurture Sequence
+```
+
+#### Load-Based Routing
+
+Route based on current system capacity:
+
+```javascript
+If queue_length("premium_support") < 5:
+→ Route to Premium Support
+
+If queue_length("standard_support") < 10:
+→ Route to Standard Support
+
+Else:
+→ Route to Callback Scheduling
+```
+
+## Workflow Design
+
+**Logical Flow Structure**
+
+- Design clear, logical progression through conditions
+- Avoid circular routing loops
+- Ensure every path leads to meaningful next steps
+- Plan for condition changes over time
+
+**Maintainability**
+
+- Document business rules behind conditions
+- Use consistent naming conventions
+- Group related conditions together
+- Plan for easy condition updates and changes
+
+## Common Logic Split Patterns
+
+### Customer Qualification Pattern
+
+```
+Logic Split: Budget Range
+├── High Budget (>$10k) → Senior Sales Rep
+├── Medium Budget ($1k-$10k) → Standard Sales Process
+├── Low Budget (<$1k) → Self-Service Options
+└── No Budget Info → Budget Qualification Flow
+```
+
+### Time-Based Routing Pattern
+
+```
+Logic Split: Current Time
+├── Business Hours → Live Agent Available?
+│   ├── Yes → Route to Available Agent
+│   └── No → Queue or Callback
+├── After Hours → After Hours Service
+│   ├── Emergency → Emergency Line
+│   └── Non-Emergency → Schedule Callback
+└── Weekend → Weekend Service Options
+```
+
+### Issue Escalation Pattern
+
+```
+Logic Split: Issue Complexity Score
+├── Simple (1-3) → Automated Resolution
+├── Moderate (4-7) → Standard Support Queue
+├── Complex (8-10) → Senior Support Specialist
+└── Critical → Immediate Manager Escalation
+```
+
+### Geographic Routing Pattern
+
+```
+Logic Split: Caller Location
+├── North America → North American Team
+├── Europe → European Team
+├── Asia Pacific → APAC Team
+└── Other → Global Support Team
+```
+
+Logic split nodes are essential for creating intelligent, responsive workflows that adapt to caller needs and business conditions, transforming simple linear processes into sophisticated, decision-driven customer experiences.

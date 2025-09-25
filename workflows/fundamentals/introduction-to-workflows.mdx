@@ -1,0 +1,142 @@
+# Introduction to Workflows
+
+Workflows in Welco AI are visual, node-based automation systems that allow you to create sophisticated conversational experiences for your AI receptionist. Instead of writing complex code, you can drag and drop nodes on a visual canvas to build interactive call flows that handle everything from simple greetings to complex business processes.
+
+## What Are Workflows?
+
+![intro to voice agents workflows](/images/workflowsintro.png)
+
+Workflows are structured sequences of actions that define how your AI receptionist handles different scenarios during phone calls. Each workflow consists of interconnected nodes that represent different types of actions - conversations with callers, function calls to external systems, call transfers, and more.
+
+Think of workflows as conversation maps that guide your AI through various paths based on caller responses, business rules, or external data. They provide a visual way to design complex call handling logic without requiring programming knowledge.
+
+## Core Concepts
+
+### Visual Node-Based System
+
+Workflows use a drag-and-drop canvas where you connect different types of nodes to create call flows:
+
+<img
+  src="/images/workflownodes.png"
+  alt="Workflownodes Pn"
+  title="Workflownodes Pn"
+  style={{ width:"28%" }}
+  className="mx-auto"
+/>
+
+- **Scenario Node**: Defines when the workflow triggers (always the starting point)
+- **Conversation Nodes**: Handle AI interactions with callers
+- **Function Nodes**: Execute business logic or integrate with external systems
+- **Logic Split Nodes**: Create conditional branching based on data or responses
+- **Transfer Nodes**: Route calls to phone numbers or other departments
+- **End Call Nodes**: Terminate the conversation (endpoint nodes)
+
+### Connection-Based Flow Control
+
+Nodes connect through handles (connection points) that define the conversation flow:
+
+- Each node can have incoming connections (targets) and outgoing connections (sources)
+- Scenario nodes only have outgoing connections (starting points)
+- End Call nodes only have incoming connections (endpoints)
+- Most nodes have multiple outgoing handles based on possible outcomes
+
+### Variable and Context Management
+
+Workflows maintain context throughout the conversation:
+
+- **Variables** store information collected during the call
+- **Session data** persists across different nodes in the same call
+- **Global settings** apply across all workflows for an agent
+
+## When to Use Workflows vs Simple Responses
+
+### Use Workflows When You Need:
+
+**Complex Decision Trees**
+
+- Multi-step qualification processes
+- Different paths based on caller responses
+- Conditional logic that varies by caller data
+
+**External System Integration**
+
+- CRM lookups during calls
+- Appointment scheduling with calendar systems
+- Database queries for customer information
+- Third-party API calls for real-time data
+
+**Multi-Modal Interactions**
+
+- Combining voice conversations with SMS follow-ups
+- Collecting structured information through forms
+- Transferring calls based on complex criteria
+
+**Business Process Automation**
+
+- Lead qualification and scoring
+- Appointment booking with availability checking
+- Order processing with inventory validation
+- Support ticket creation and routing
+
+### Use Simple Responses When You Have:
+
+**Straightforward Questions**
+
+- Basic FAQ responses
+- Simple information requests
+- Standard greetings or closings
+
+**Static Information**
+
+- Business hours
+- Location details
+- General pricing information
+
+**Single-Step Interactions**
+
+- Quick confirmations
+- Basic yes/no questions
+- Simple data collection
+
+## Workflow Execution Model
+
+### Template vs Instance
+
+**Workflow Templates** are the designs you create - they define the structure, nodes, and connections but don't execute directly.
+
+**Workflow Instances** are created each time a template runs during an actual call. Each phone call creates a new instance that maintains its own variables and state.
+
+### Execution Engine
+
+When a call comes in, the system:
+
+1. **Evaluates Scenarios** - Determines which workflow template matches the call context
+2. **Creates Instance** - Spawns a new workflow instance from the template
+3. **Executes Nodes** - Processes each node in sequence based on connections
+4. **Maintains State** - Tracks variables and context throughout the call
+5. **Logs Everything** - Records execution details for debugging and analytics
+
+## Getting Started
+
+To begin with workflows:
+
+1. **Plan Your Flow** - Map out the conversation paths on paper first
+2. **Start with Scenario** - Every workflow begins with a scenario node
+3. **Build Step by Step** - Add nodes one at a time and test connections
+4. **Configure Settings** - Set up node-specific configurations
+5. **Test Thoroughly** - Use the execution logs to verify behavior
+6. **Iterate and Improve** - Refine based on real call data and feedback
+
+<Info>
+  **Best Practice**: Start with simple workflows and gradually add complexity. It's easier to debug and maintain smaller, focused workflows than large, monolithic ones.
+</Info>
+
+## Next Steps
+
+Now that you understand the fundamentals, explore:
+
+- [Common Workflow Patterns](/workflows/fundamentals/common-workflow-patterns) for typical business scenarios
+- [Node Types](/workflows/node-types/) for detailed explanations of each node type
+- [Advanced Integrations](/workflows/advanced-integrations/) for external system connections
+
+Workflows transform your AI receptionist from a simple question-answering bot into an intelligent business process automation tool that can handle complex scenarios while maintaining natural conversation flow.

@@ -1,0 +1,136 @@
+---
+title: "SMS Nodes - Text Message Integration | Welco Docs"
+description: "Configure SMS nodes to send text messages during calls. Confirmations, links, follow-ups, and multi-modal communication workflows."
+---
+
+# SMS Nodes
+
+SMS nodes enable your AI receptionist to send text messages during or after phone calls, creating powerful multi-modal communication experiences. They're perfect for sending confirmations, links, follow-up information, and maintaining engagement beyond the voice call.
+
+## Overview
+
+![send sms workflow](/images/sendsms.png)
+
+SMS nodes extend your workflow capabilities beyond voice conversations, allowing you to send structured information, links, confirmations, and follow-up messages directly to callers' mobile phones. This creates seamless omnichannel experiences that combine the personal touch of voice with the convenience of text.
+
+**Key Features:**
+
+- Send text messages during active calls
+- Dynamic message content with variable substitution
+- Integration with workflow data and external systems
+- Delivery tracking and status monitoring
+- Template management for consistent messaging
+- Support for links, multimedia, and rich formatting
+
+## When to Use SMS Nodes
+
+### Confirmation and Documentation
+
+**Appointment Confirmations**
+
+- Send appointment details with date, time, and location
+- Include calendar links for easy scheduling
+- Provide preparation instructions or requirements
+- Send reminder messages with cancellation options
+
+**Order and Transaction Confirmations**
+
+- Send order summaries with item details and totals
+- Include tracking numbers and delivery information
+- Provide receipt copies and warranty information
+- Send payment confirmations with reference numbers
+
+**Service Request Documentation**
+
+- Send service ticket numbers and reference IDs
+- Include expected response times and next steps
+- Provide links to status tracking portals
+- Send technician contact information and schedules
+
+### Information Sharing
+
+**Detailed Information**
+
+- Send complex information that's hard to convey verbally
+- Share lengthy URLs, addresses, or reference numbers
+- Provide detailed instructions or step-by-step guides
+- Send downloadable resources and documentation
+
+**Links and Resources**
+
+- Share website links, forms, or applications
+- Send downloadable brochures, catalogs, or manuals
+- Provide access to customer portals or self-service tools
+- Share educational content and how-to guides
+
+**Contact Information**
+
+- Send direct contact details for specific representatives
+- Share department phone numbers and email addresses
+- Provide emergency contact information
+- Send office hours and location details
+
+### Follow-Up Communication
+
+**Post-Call Engagement**
+
+- Send survey links for feedback collection
+- Provide additional resources based on call discussion
+- Share relevant offers or promotional information
+- Send follow-up appointment scheduling links
+
+**Ongoing Communication**
+
+- Set up reminder sequences for important deadlines
+- Send progress updates on service requests
+- Provide seasonal or periodic communication
+- Share company news and updates
+
+## Configuration Options
+
+### Message Content
+
+#### Static Text Messages
+
+Pre-written messages for consistent communication:
+
+```
+Thank you for calling ABC Medical Center. Your appointment is scheduled for [DATE] at [TIME] with Dr. Smith. Please arrive 15 minutes early and bring your insurance card. If you need to cancel or reschedule, please call us at (555) 123-4567.
+```
+
+## Integration Patterns
+
+### With Conversation Nodes
+
+Collect information through conversation, then send via SMS:
+
+```
+1. Conversation Node: Collect customer email and preferences
+2. Extract Variables: Structure collected information
+3. SMS Node: Send welcome message with next steps
+4. Function Node: Add customer to CRM system
+```
+
+### With Function Nodes
+
+Use function results to personalize SMS content:
+
+```
+1. Function Node: Look up customer order history
+2. Logic Split: Check customer tier and preferences
+3. SMS Node: Send personalized offers based on history
+4. Function Node: Log engagement metrics
+```
+
+### With Calendar Integration
+
+Combine scheduling with SMS confirmations:
+
+```
+1. Function Node: Book appointment in calendar system
+2. SMS Node: Send immediate confirmation with details
+3. Function Node: Schedule reminder SMS for day before
+4. SMS Node: Send follow-up survey after appointment
+```
+
+SMS nodes provide powerful multi-modal communication capabilities that enhance customer experience by combining the personal touch of voice conversations with the convenience and permanence of text messaging, creating more effective and engaging customer interactions.

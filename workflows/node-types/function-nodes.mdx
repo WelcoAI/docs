@@ -1,0 +1,191 @@
+---
+title: "Function Nodes - Execute Business Logic"
+description: "Configure function nodes for API calls, database operations, and business logic execution. CRM integration, payment processing, and custom workflows."
+---
+
+# Function Nodes
+
+Function nodes are the workhorses of workflow automation, executing business logic and integrating with external systems. They handle everything from simple calculations to complex API calls, database operations, and third-party service integrations.
+
+## Overview
+
+Function nodes extend your AI receptionist beyond conversation into action. They can query databases, update CRM systems, check inventory, process payments, send emails, and perform any business logic your organization requires.
+
+<img
+  src="/images/functionnode.png"
+  alt="function nodes for workflows"
+  title="Functionnode Pn"
+  className="mx-auto"
+  style={{ width:"47%" }}
+/>
+
+**Key Capabilities:**
+
+- Execute predefined business functions
+- Create custom functions with code
+- Integrate with external APIs and databases
+- Process and transform data
+- Handle complex business rules
+- Manage error handling and retries
+
+## Custom Functions
+
+Create tailored functions for your specific business needs:
+
+#### API Integration Functions
+
+Connect to any REST API to:
+
+- Retrieve real-time data from proprietary systems
+- Update records in custom applications
+- Validate information against external services
+- Process complex business calculations
+
+#### Data Processing Functions
+
+Manipulate and transform data:
+
+- Format phone numbers or addresses
+- Calculate pricing based on complex rules
+- Validate input data against business rules
+- Generate reports or summaries
+
+### Creating Custom Functions
+
+Custom functions use JavaScript for maximum flexibility:
+
+#### Basic Structure
+
+```javascript
+function customBusinessLogic(input) {
+  // Access workflow variables
+  const customerData = input.variables;
+  const callContext = input.context;
+
+  try {
+    // Your business logic here
+    const result = processBusinessRules(customerData);
+
+    // Return results for workflow use
+    return {
+      success: true,
+      data: result,
+      message: "Processing completed successfully"
+    };
+  } catch (error) {
+    return {
+      success: false,
+      error: error.message,
+      data: null
+    };
+  }
+}
+```
+
+#### Advanced Example: Inventory Check with Pricing
+
+```javascript
+function checkInventoryAndPricing(input) {
+  const { product_id, quantity, customer_tier } = input.variables;
+
+  try {
+    // Check inventory availability
+    const inventory = await callExternalAPI(`/inventory/${product_id}`);
+
+    if (inventory.available < quantity) {
+      return {
+        success: false,
+        available_quantity: inventory.available,
+        message: `Only ${inventory.available} units available`
+      };
+    }
+
+    // Calculate pricing based on customer tier
+    const basePrice = inventory.price;
+    const discount = getTierDiscount(customer_tier);
+    const finalPrice = basePrice * (1 - discount) * quantity;
+
+    return {
+      success: true,
+      total_price: finalPrice,
+      unit_price: basePrice * (1 - discount),
+      discount_applied: discount,
+      estimated_delivery: calculateDeliveryDate(product_id)
+    };
+
+  } catch (error) {
+    return {
+      success: false,
+      error: `Inventory check failed: ${error.message}`
+    };
+  }
+}
+```
+
+## Transition Logic
+
+Function nodes support multiple transitions based on execution results:
+
+### Success/Failure Transitions
+
+```
+Success Transition: Function completed successfully
+→ Continue to next step in process
+
+Failure Transition: Function failed after retries
+→ Route to error handling or human transfer
+
+Partial Success: Function completed with warnings
+→ Route to confirmation step
+```
+
+### Data-Based Transitions
+
+```
+If result.inventory_available > 0:
+→ Proceed to order processing
+
+If result.credit_approved == true:
+→ Continue to payment processing
+
+If result.appointment_slots.length == 0:
+→ Route to waitlist signup
+```
+
+## Common Integration Patterns
+
+### CRM Workflow Pattern
+
+```
+1. Conversation Node: Collect customer information
+2. Function Node: Look up existing customer record
+3. Logic Split: New vs existing customer
+4. Function Node: Create or update customer record
+5. Function Node: Log interaction details
+6. Conversation Node: Confirm next steps
+```
+
+### Appointment Booking Pattern
+
+```
+1. Extract Variables: Collect appointment preferences
+2. Function Node: Check practitioner availability
+3. Logic Split: Available slots vs no availability
+4. Function Node: Book appointment (if available)
+5. Function Node: Send confirmation email
+6. SMS Node: Send text confirmation
+```
+
+### Order Processing Pattern
+
+```
+1. Extract Variables: Collect order details
+2. Function Node: Validate inventory
+3. Function Node: Calculate pricing and taxes
+4. Function Node: Process payment
+5. Logic Split: Payment success vs failure
+6. Function Node: Create order record (if successful)
+7. Function Node: Send order confirmation
+```
+
+Function nodes are essential for creating sophisticated, business-integrated workflows that go beyond simple conversations to deliver real business value through automation and system integration.
