@@ -22,6 +22,14 @@
               "getting-started/welco-explained"
             ]
           },
+          {
+            "group": "Phone Number Setup",
+            "pages": [
+              "phone-number-setup/get-a-number",
+              "phone-number-setup/business-hours",
+              "phone-number-setup/twilioguide"
+            ]
+          },
          {
             "group": "Prompt Engineering",
             "pages": [
