@@ -1,3 +1,8 @@
+---
+title: "Common Workflow Patterns in Welco AI"
+description: "Explore pre-built workflow patterns in Welco AI for healthcare, real estate, customer service, and business—ready templates to streamline call automation."
+---
+
 # Common Workflow Patterns
 
 This guide covers the most frequently used workflow patterns across different industries and business scenarios. These templates provide starting points for building your own sophisticated AI receptionist workflows.
@@ -7,6 +12,7 @@ This guide covers the most frequently used workflow patterns across different in
 Welco AI provides pre-built templates across four main categories:
 
 ### Healthcare
+
 - Patient appointment scheduling
 - Symptom screening and triage
 - Insurance verification
@@ -14,6 +20,7 @@ Welco AI provides pre-built templates across four main categories:
 - Emergency escalation protocols
 
 ### Real Estate
+
 - Property inquiry qualification
 - Showing appointment booking
 - Lead scoring and routing
@@ -21,6 +28,7 @@ Welco AI provides pre-built templates across four main categories:
 - Mortgage pre-qualification
 
 ### Customer Service
+
 - Support ticket creation
 - Issue troubleshooting
 - Refund and return processing
@@ -28,6 +36,7 @@ Welco AI provides pre-built templates across four main categories:
 - Escalation to human agents
 
 ### General Business
+
 - General inquiries and FAQ
 - Contact information collection
 - Service requests
@@ -41,17 +50,20 @@ Welco AI provides pre-built templates across four main categories:
 **Use Case**: Initial caller interaction with lead qualification
 
 **Flow Structure**:
+
 ```
 Scenario → Conversation (Greeting) → Logic Split (Qualification) → [Multiple Paths]
 ```
 
 **Key Components**:
+
 - **Scenario Node**: "When customers call for information about our services"
 - **Conversation Node**: Warm greeting with qualification questions
 - **Logic Split Node**: Routes based on caller responses (existing customer, new prospect, urgent issue)
 - **Multiple Paths**: Different conversation flows for each caller type
 
 **Best Practices**:
+
 - Keep greeting warm but brief (under 30 seconds)
 - Ask one qualifying question per conversation node
 - Use logic splits to route rather than long conversation branches
@@ -62,17 +74,20 @@ Scenario → Conversation (Greeting) → Logic Split (Qualification) → [Multip
 **Use Case**: Booking appointments with availability checking
 
 **Flow Structure**:
+
 ```
 Scenario → Conversation (Service Interest) → Function (Check Availability) → Logic Split → Conversation (Confirmation) → End Call
 ```
 
 **Key Components**:
+
 - **Function Node**: Integrates with calendar system (Cal.com, Google Calendar)
 - **Extract Variables Node**: Captures preferred dates, times, contact information
 - **Logic Split Node**: Handles available vs unavailable time slots
 - **SMS Node**: Sends confirmation and reminder messages
 
 **Implementation Details**:
+
 - Use extract variables to capture structured appointment data
 - Implement fallback times when first choice isn't available
 - Always confirm appointment details before booking
@@ -83,17 +98,20 @@ Scenario → Conversation (Service Interest) → Function (Check Availability) �
 **Use Case**: Creating support tickets with proper categorization
 
 **Flow Structure**:
+
 ```
 Scenario → Conversation (Issue Description) → Extract Variables → Function (Create Ticket) → Conversation (Ticket Number) → End Call
 ```
 
 **Key Components**:
+
 - **Conversation Nodes**: Gather issue details naturally through conversation
 - **Extract Variables Node**: Structure issue data (category, priority, description)
 - **Function Node**: Creates ticket in support system (Zendesk, ServiceNow, etc.)
 - **Logic Split Node**: Routes urgent issues to immediate transfer
 
 **Best Practices**:
+
 - Categorize issues early to route appropriately
 - Extract contact information for follow-up
 - Provide ticket numbers for reference
@@ -104,11 +122,13 @@ Scenario → Conversation (Issue Description) → Extract Variables → Function
 **Use Case**: Qualifying and routing sales leads
 
 **Flow Structure**:
+
 ```
 Scenario → Conversation (Needs Assessment) → Extract Variables → Logic Split (Qualification Score) → [Transfer to Sales/Schedule Callback/Information Packet]
 ```
 
 **Key Components**:
+
 - **Multiple Conversation Nodes**: Progressive qualification questions
 - **Extract Variables Nodes**: Capture budget, timeline, decision-makers
 - **Logic Split Nodes**: Score leads based on qualification criteria
@@ -116,6 +136,7 @@ Scenario → Conversation (Needs Assessment) → Extract Variables → Logic Spl
 - **Function Nodes**: Update CRM with lead information
 
 **Qualification Criteria Examples**:
+
 - Budget range and authority to purchase
 - Timeline for decision-making
 - Specific needs and pain points
@@ -126,17 +147,20 @@ Scenario → Conversation (Needs Assessment) → Extract Variables → Logic Spl
 **Use Case**: Collecting detailed information with multi-modal follow-up
 
 **Flow Structure**:
+
 ```
 Scenario → Intake Form → Extract Variables → Function (Store Data) → SMS (Follow-up) → End Call
 ```
 
 **Key Components**:
+
 - **Intake Form Node**: Structured data collection
 - **Extract Variables Node**: Organize collected information
 - **Function Node**: Store in CRM or database
 - **SMS Node**: Send follow-up information or next steps
 
 **Use Cases**:
+
 - Insurance claims initiation
 - Service request details
 - Event planning information
@@ -149,18 +173,20 @@ Scenario → Intake Form → Extract Variables → Function (Store Data) → SMS
 **Scenario**: "When patients call to schedule appointments"
 
 **Typical Flow**:
-1. **Greeting Conversation**: Warm welcome and reason for call
-2. **Extract Variables**: Patient name, DOB, insurance information
-3. **Function Node**: Verify patient in system and insurance eligibility
-4. **Logic Split**: New patient vs existing patient paths
-5. **Conversation**: Available appointment types and preferences
-6. **Function Node**: Check doctor availability
-7. **Conversation**: Offer available slots
-8. **Extract Variables**: Confirm appointment details
-9. **Function Node**: Book appointment in EMR system
+
+ 1. **Greeting Conversation**: Warm welcome and reason for call
+ 2. **Extract Variables**: Patient name, DOB, insurance information
+ 3. **Function Node**: Verify patient in system and insurance eligibility
+ 4. **Logic Split**: New patient vs existing patient paths
+ 5. **Conversation**: Available appointment types and preferences
+ 6. **Function Node**: Check doctor availability
+ 7. **Conversation**: Offer available slots
+ 8. **Extract Variables**: Confirm appointment details
+ 9. **Function Node**: Book appointment in EMR system
 10. **SMS Node**: Send confirmation with pre-visit instructions
 
 **Special Considerations**:
+
 - HIPAA compliance for patient information
 - Insurance verification before booking
 - Different flows for urgent vs routine appointments
@@ -171,6 +197,7 @@ Scenario → Intake Form → Extract Variables → Function (Store Data) → SMS
 **Scenario**: "When prospects call about properties or services"
 
 **Typical Flow**:
+
 1. **Greeting Conversation**: Welcome and identify interest area
 2. **Logic Split**: Buying vs selling vs renting
 3. **Conversation**: Qualification questions (budget, timeline, location)
@@ -182,6 +209,7 @@ Scenario → Intake Form → Extract Variables → Function (Store Data) → SMS
 9. **SMS Node**: Send property links or consultation confirmation
 
 **Key Variables to Extract**:
+
 - Price range and financing pre-approval status
 - Preferred neighborhoods or areas
 - Timeline for purchase/sale
@@ -193,6 +221,7 @@ Scenario → Intake Form → Extract Variables → Function (Store Data) → SMS
 **Scenario**: "When customers call about orders, returns, or issues"
 
 **Typical Flow**:
+
 1. **Greeting Conversation**: Welcome and reason for call
 2. **Logic Split**: Order inquiry vs return vs general question
 3. **Extract Variables**: Order number or customer email
@@ -228,27 +257,31 @@ Ensures human oversight for complex or sensitive situations:
 ## Pattern Selection Guidelines
 
 ### Simple Information Requests
+
 - Use basic conversation → end call pattern
 - No complex logic or integrations needed
 - Examples: hours, location, basic pricing
 
 ### Transactional Processes
+
 - Use conversation → extract variables → function → confirmation pattern
 - Include error handling and confirmation steps
 - Examples: booking, ordering, account updates
 
 ### Complex Sales Processes
+
 - Use multi-stage qualification → logic routing → transfer pattern
 - Include lead scoring and CRM integration
 - Examples: real estate, B2B sales, high-ticket services
 
 ### Support and Service
+
 - Use triage → categorization → resolution or escalation pattern
 - Include ticket creation and follow-up automation
 - Examples: technical support, customer service, warranty claims
 
 <Warning>
-**Important**: Always include fallback paths for unexpected responses or system failures. Every logic split should have an "else" condition that handles unmatched scenarios gracefully.
+  **Important**: Always include fallback paths for unexpected responses or system failures. Every logic split should have an "else" condition that handles unmatched scenarios gracefully.
 </Warning>
 
 ## Testing Your Patterns
