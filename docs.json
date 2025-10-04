@@ -97,12 +97,12 @@
       "anchors": [
         {
           "anchor": "Documentation",
-          "href": "https://docs.welco.ai",
+          "href": "https://docs.welco.ai/",
           "icon": "book-open-cover"
         },
         {
           "anchor": "Blog",
-          "href": "https://welco.ai/blog",
+          "href": "https://welco.ai/blog/",
           "icon": "newspaper"
         }
       ]
